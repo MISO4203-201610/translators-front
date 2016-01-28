@@ -11,38 +11,40 @@
                 required: true
             }, {
                 name: 'creationDate',
-                displayName: 'CreationDate',
+                displayName: 'Creation Date',
                 type: 'Date',
                 required: true
             }, {
                 name: 'dueDate',
-                displayName: 'DueDate',
+                displayName: 'Due Date',
                 type: 'Date',
-                required: true
-            }, {
-                name: 'status',
-                displayName: 'Status',
-                type: 'String',
-                required: true
-            }, {
-                name: 'targetLanguage',
-                displayName: 'TargetLanguage',
-                type: 'Reference',
-                service: 'languageService',
-                options: [],
                 required: true
             }, {
                 name: 'customer',
                 displayName: 'Customer',
                 type: 'Reference',
-                service: 'customerService',
+                url: 'customerContext',
+                options: [],
+                required: true
+            }, {
+                name: 'targetLanguage',
+                displayName: 'Target Language',
+                type: 'Reference',
+                url: 'languageContext',
+                options: [],
+                required: true
+            }, {
+                name: 'status',
+                displayName: 'Status',
+                type: 'Reference',
+                url: 'statusContext',
                 options: [],
                 required: true
             }, {
                 name: 'originalLanguage',
-                displayName: 'OriginalLanguage',
+                displayName: 'Original Language',
                 type: 'Reference',
-                service: 'languageService',
+                url: 'languageContext',
                 options: [],
                 required: true
             }]});

@@ -14,7 +14,8 @@
 
         <!-- build:css(<%= meta.src %>) styles/main.css -->
         <!-- include: "type": "css", "files": "<%= meta.includeCssFiles %>" -->
-        
+
+       
         <!-- /include -->
         <!-- endbuild -->
 
@@ -36,6 +37,7 @@
         <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
+        <script src="https://rawgit.com/recursosCSWuniandes/ng-crud/master/dist/ngcrud.js"></script>
 
         <!-- build:js(<%= meta.src %>) scripts/scripts.js -->
         <!-- include: "type": "js", "files": "<%= meta.includeJsFiles %>" -->
@@ -44,19 +46,15 @@
         <script src="src/modules/customer/customer.mod.js"></script>
         <script src="src/modules/education/education.mod.js"></script>
         <script src="src/modules/language/language.mod.js"></script>
+        <script src="src/modules/status/status.mod.js"></script>
         <script src="src/modules/translationRequest/translationRequest.mod.js"></script>
         <script src="src/modules/translator/translator.mod.js"></script>
         <script src="src/modules/correctionRequest/correctionRequest.ctrl.js"></script>
-        <script src="src/modules/correctionRequest/correctionRequest.svc.js"></script>
         <script src="src/modules/customer/customer.ctrl.js"></script>
-        <script src="src/modules/customer/customer.svc.js"></script>
-        <script src="src/modules/education/education.svc.js"></script>
         <script src="src/modules/language/language.ctrl.js"></script>
-        <script src="src/modules/language/language.svc.js"></script>
+        <script src="src/modules/status/status.ctrl.js"></script>
         <script src="src/modules/translationRequest/translationRequest.ctrl.js"></script>
-        <script src="src/modules/translationRequest/translationRequest.svc.js"></script>
         <script src="src/modules/translator/translator.ctrl.js"></script>
-        <script src="src/modules/translator/translator.svc.js"></script>
         <!-- /include -->
         <!-- endbuild -->
 
@@ -80,10 +78,11 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="main-bar">
                             <ul class="nav navbar-nav">
-                                <li><a ui-sref="correctionRequest">CorrectionRequest</a></li>
+                                <li><a ui-sref="correctionRequest">Correction Request</a></li>
                                 <li><a ui-sref="customer">Customer</a></li>
                                 <li><a ui-sref="language">Language</a></li>
-                                <li><a ui-sref="translationRequest">TranslationRequest</a></li>
+                                <li><a ui-sref="status">Status</a></li>
+                                <li><a ui-sref="translationRequest">Translation Request</a></li>
                                 <li><a ui-sref="translator">Translator</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">

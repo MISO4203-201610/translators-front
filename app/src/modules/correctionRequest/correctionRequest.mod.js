@@ -11,31 +11,33 @@
                 required: true
             }, {
                 name: 'creationDate',
-                displayName: 'CreationDate',
+                displayName: 'Creation Date',
                 type: 'Date',
                 required: true
             }, {
                 name: 'dueDate',
-                displayName: 'DueDate',
+                displayName: 'Due Date',
                 type: 'Date',
-                required: true
-            }, {
-                name: 'status',
-                displayName: 'Status',
-                type: 'String',
-                required: true
-            }, {
-                name: 'customer',
-                displayName: 'Customer',
-                type: 'Reference',
-                service: 'customerService',
-                options: [],
                 required: true
             }, {
                 name: 'language',
                 displayName: 'Language',
                 type: 'Reference',
-                service: 'languageService',
+                url: 'languageContext',
+                options: [],
+                required: true
+            }, {
+                name: 'customer',
+                displayName: 'Customer',
+                type: 'Reference',
+                url: 'customerContext',
+                options: [],
+                required: true
+            }, {
+                name: 'status',
+                displayName: 'Status',
+                type: 'Reference',
+                url: 'statusContext',
                 options: [],
                 required: true
             }]});

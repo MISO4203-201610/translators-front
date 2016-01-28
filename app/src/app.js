@@ -5,6 +5,7 @@
         'customerModule',
         'educationModule',
         'languageModule',
+        'statusModule',
         'translationRequestModule',
         'translatorModule',
         'authModule',
@@ -38,6 +39,12 @@
                     url: '/language',
                     templateUrl: tplUrl,
                     controller: 'languageCtrl',
+                    controllerAs: alias
+                })
+                .state('status', {
+                    url: '/status',
+                    templateUrl: tplUrl,
+                    controller: 'statusCtrl',
                     controllerAs: alias
                 })
                 .state('translationRequest', {

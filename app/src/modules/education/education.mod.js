@@ -11,12 +11,12 @@
                 required: true
             }, {
                 name: 'startDate',
-                displayName: 'StartDate',
+                displayName: 'Start Date',
                 type: 'Date',
                 required: true
             }, {
                 name: 'endDate',
-                displayName: 'EndDate',
+                displayName: 'End Date',
                 type: 'Date',
                 required: true
             }, {

@@ -1,16 +1,43 @@
 (function (ng) {
     var mod = ng.module('translatorModule');
 
-    mod.controller('translatorCtrl', ['CrudCreator', '$scope', 'translatorService', 'translatorModel', function (CrudCreator, $scope, svc, model) {
-            CrudCreator.extendController(this, svc, $scope, model, 'translator', 'Translator');
+    mod.controller('translatorCtrl', ['CrudCreator', '$scope',
+        'translatorContext', 'translatorModel',
+        function (ngCrud, $scope, url, model) {
+            ngCrud.extendController({
+                name: 'translator',
+                displayName: 'Translator',
+                ctrl: this,
+                scope: $scope,
+                model: model,
+                url: url
+            });
             this.fetchRecords();
         }]);
 
-    mod.controller('languagestranslatorCtrl', ['CrudCreator', '$scope', 'languageModel', 'languageService', function (CrudCreator, $scope, model, svc) {
-            CrudCreator.extendAggChildCtrl(this, $scope, model, 'languages', svc);
+    mod.controller('TranslatoreducationCtrl', ['CrudCreator', '$scope', 'educationModel',
+        function (ngCrud, $scope, model) {
+            ngCrud.extendCompChildCtrl({
+                name: 'education',
+                displayName: 'Education',
+                parent: 'translator',
+                ctrl: this,
+                scope: $scope,
+                model: model
+            });
         }]);
 
-    mod.controller('educationtranslatorCtrl', ['CrudCreator', '$scope', 'educationModel', function (CrudCreator, $scope, model) {
-            CrudCreator.extendCompChildCtrl(this, $scope, model, 'education', 'translator');
+    mod.controller('TranslatorlanguagesCtrl', ['CrudCreator', '$scope',
+        'languageModel', 'languageContext', 'translatorContext',
+        function (ngCrud, $scope, model, url, parentUrl) {
+            ngCrud.extendAggChildCtrl({
+                name: 'languages',
+                displayName: 'Languages',
+                parentUrl: parentUrl,
+                listUrl: url,
+                ctrl: this,
+                scope: $scope,
+                model: model
+            });
         }]);
 })(window.angular);

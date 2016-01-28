@@ -1,12 +1,12 @@
 (function (ng) {
-    var mod = ng.module('languageModule');
+    var mod = ng.module('statusModule');
 
-    mod.controller('languageCtrl', ['CrudCreator', '$scope',
-        'languageContext', 'languageModel',
+    mod.controller('statusCtrl', ['CrudCreator', '$scope',
+        'statusContext', 'statusModel',
         function (ngCrud, $scope, url, model) {
             ngCrud.extendController({
-                name: 'language',
-                displayName: 'Language',
+                name: 'status',
+                displayName: 'Status',
                 ctrl: this,
                 scope: $scope,
                 model: model,

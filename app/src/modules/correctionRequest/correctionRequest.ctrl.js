@@ -1,8 +1,17 @@
 (function (ng) {
     var mod = ng.module('correctionRequestModule');
 
-    mod.controller('correctionRequestCtrl', ['CrudCreator', '$scope', 'correctionRequestService', 'correctionRequestModel', function (CrudCreator, $scope, svc, model) {
-            CrudCreator.extendController(this, svc, $scope, model, 'correctionRequest', 'CorrectionRequest');
+    mod.controller('correctionRequestCtrl', ['CrudCreator', '$scope',
+        'correctionRequestContext', 'correctionRequestModel',
+        function (ngCrud, $scope, url, model) {
+            ngCrud.extendController({
+                name: 'correctionRequest',
+                displayName: 'Correction Request',
+                ctrl: this,
+                scope: $scope,
+                model: model,
+                url: url
+            });
             this.loadRefOptions();
             this.fetchRecords();
         }]);
