@@ -11,16 +11,16 @@
                 required: true
             }],
         childs: [{
-                name: 'correctionRequests',
-                displayName: 'Correction Requests',
-                //template: '', //override generic template
-                ctrl: 'CustomercorrectionRequestsCtrl',
-                owned: false
-            }, {
                 name: 'translationRequests',
                 displayName: 'Translation Requests',
                 //template: '', //override generic template
                 ctrl: 'CustomertranslationRequestsCtrl',
+                owned: false
+            }, {
+                name: 'correctionRequests',
+                displayName: 'Correction Requests',
+                //template: '', //override generic template
+                ctrl: 'CustomercorrectionRequestsCtrl',
                 owned: false
             }]});
 })(window.angular);

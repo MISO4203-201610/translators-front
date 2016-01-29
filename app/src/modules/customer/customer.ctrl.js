@@ -15,12 +15,12 @@
             this.fetchRecords();
         }]);
 
-    mod.controller('CustomercorrectionRequestsCtrl', ['CrudCreator', '$scope',
-        'correctionRequestModel', 'correctionRequestContext', 'customerContext',
+    mod.controller('CustomertranslationRequestsCtrl', ['CrudCreator', '$scope',
+        'translationRequestModel', 'translationRequestContext', 'customerContext',
         function (ngCrud, $scope, model, url, parentUrl) {
             ngCrud.extendAggChildCtrl({
-                name: 'correctionRequests',
-                displayName: 'Correction Requests',
+                name: 'translationRequests',
+                displayName: 'Translation Requests',
                 parentUrl: parentUrl,
                 listUrl: url,
                 ctrl: this,
@@ -30,12 +30,12 @@
             this.loadRefOptions();
         }]);
 
-    mod.controller('CustomertranslationRequestsCtrl', ['CrudCreator', '$scope',
-        'translationRequestModel', 'translationRequestContext', 'customerContext',
+    mod.controller('CustomercorrectionRequestsCtrl', ['CrudCreator', '$scope',
+        'correctionRequestModel', 'correctionRequestContext', 'customerContext',
         function (ngCrud, $scope, model, url, parentUrl) {
             ngCrud.extendAggChildCtrl({
-                name: 'translationRequests',
-                displayName: 'Translation Requests',
+                name: 'correctionRequests',
+                displayName: 'Correction Requests',
                 parentUrl: parentUrl,
                 listUrl: url,
                 ctrl: this,

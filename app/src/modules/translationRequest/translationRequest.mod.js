@@ -27,13 +27,6 @@
                 options: [],
                 required: true
             }, {
-                name: 'targetLanguage',
-                displayName: 'Target Language',
-                type: 'Reference',
-                url: 'languageContext',
-                options: [],
-                required: true
-            }, {
                 name: 'status',
                 displayName: 'Status',
                 type: 'Reference',
@@ -43,6 +36,13 @@
             }, {
                 name: 'originalLanguage',
                 displayName: 'Original Language',
+                type: 'Reference',
+                url: 'languageContext',
+                options: [],
+                required: true
+            }, {
+                name: 'targetLanguage',
+                displayName: 'Target Language',
                 type: 'Reference',
                 url: 'languageContext',
                 options: [],
