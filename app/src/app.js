@@ -59,7 +59,7 @@
                     controller: 'translatorCtrl',
                     controllerAs: alias
                 });
-            $urlRouterProvider.otherwise('/');
+                $urlRouterProvider.otherwise('/');
         }]);
 
     mod.config(['authServiceProvider', function (auth) {

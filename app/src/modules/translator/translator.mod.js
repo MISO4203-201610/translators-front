@@ -22,5 +22,5 @@
                 //template: '', //override generic template
                 ctrl: 'TranslatorlanguagesCtrl',
                 owned: false
-            }]});
+            }        ]});
 })(window.angular);

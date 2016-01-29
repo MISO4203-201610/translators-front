@@ -11,11 +11,11 @@ describe('CorrectionRequest E2E Testing', function () {
             mod.run(['ngCrudMock.mockRecords', function(records){
                 records['correctionRequests'] = [];
 
-                records['languages'] = [];
-                records['languages'].push({id: Math.floor(Math.random() * 10000), name: 'language'});
-
                 records['statuss'] = [];
                 records['statuss'].push({id: Math.floor(Math.random() * 10000), name: 'status'});
+
+                records['languages'] = [];
+                records['languages'].push({id: Math.floor(Math.random() * 10000), name: 'language'});
 
                 records['customers'] = [];
                 records['customers'].push({id: Math.floor(Math.random() * 10000), name: 'customer'});
@@ -27,8 +27,8 @@ describe('CorrectionRequest E2E Testing', function () {
         browser.get('#/correctionRequest');
         element(by.id('create-correctionRequest')).click();
         element(by.id('name')).sendKeys(nameVarTest);
-        element(by.id('language')).all(by.css('option')).last().click();
         element(by.id('status')).all(by.css('option')).last().click();
+        element(by.id('language')).all(by.css('option')).last().click();
         element(by.id('customer')).all(by.css('option')).last().click();
         element(by.id('save-correctionRequest')).click();
         expect(element.all(by.repeater('record in records')).count()).toEqual(1);

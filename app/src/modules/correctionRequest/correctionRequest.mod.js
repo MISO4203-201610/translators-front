@@ -20,17 +20,17 @@
                 type: 'Date',
                 required: true
             }, {
-                name: 'language',
-                displayName: 'Language',
-                type: 'Reference',
-                url: 'languageContext',
-                options: [],
-                required: true
-            }, {
                 name: 'status',
                 displayName: 'Status',
                 type: 'Reference',
                 url: 'statusContext',
+                options: [],
+                required: true
+            }, {
+                name: 'language',
+                displayName: 'Language',
+                type: 'Reference',
+                url: 'languageContext',
                 options: [],
                 required: true
             }, {
