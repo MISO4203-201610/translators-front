@@ -8,21 +8,52 @@
 
         <!-- build:css(<%= meta.src %>) styles/vendor.css -->
         <!-- bower:css -->
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../bower_components/bootswatch-dist/css/bootstrap.css" />
         <!-- endbower -->
         <!-- endbuild -->
 
         <!-- build:css(<%= meta.src %>) styles/main.css -->
         <!-- include: "type": "css", "files": "<%= meta.includeCssFiles %>" -->
+        
         <!-- /include -->
         <!-- endbuild -->
 
         <!-- build:js(<%= meta.src %>) scripts/vendor.js -->
         <!-- bower:js -->
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="../bower_components/angular-mocks/angular-mocks.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../bower_components/lodash/lodash.js"></script>
+        <script src="../bower_components/restangular/dist/restangular.js"></script>
+        <script src="../bower_components/ng-crud/dist/ngcrud.js"></script>
+        <script src="../bower_components/ngstorage/ngStorage.js"></script>
+        <script src="../bower_components/checklist-model/checklist-model.js"></script>
+        <script src="../bower_components/angular-route/angular-route.js"></script>
+        <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="../bower_components/csw-ng-auth/dist/csw-ng-auth.js"></script>
+        <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
         <!-- build:js(<%= meta.src %>) scripts/scripts.js -->
         <!-- include: "type": "js", "files": "<%= meta.includeJsFiles %>" -->
+        <script src="src/app.js"></script>
+        <script src="src/modules/correctionRequest/correctionRequest.mod.js"></script>
+        <script src="src/modules/customer/customer.mod.js"></script>
+        <script src="src/modules/education/education.mod.js"></script>
+        <script src="src/modules/language/language.mod.js"></script>
+        <script src="src/modules/status/status.mod.js"></script>
+        <script src="src/modules/translationRequest/translationRequest.mod.js"></script>
+        <script src="src/modules/translator/translator.mod.js"></script>
+        <script src="src/modules/correctionRequest/correctionRequest.ctrl.js"></script>
+        <script src="src/modules/customer/customer.ctrl.js"></script>
+        <script src="src/modules/language/language.ctrl.js"></script>
+        <script src="src/modules/status/status.ctrl.js"></script>
+        <script src="src/modules/translationRequest/translationRequest.ctrl.js"></script>
+        <script src="src/modules/translator/translator.ctrl.js"></script>
         <!-- /include -->
         <!-- endbuild -->
 
@@ -47,10 +78,10 @@
                         <div class="collapse navbar-collapse" id="main-bar">
                             <ul class="nav navbar-nav">
                                 <li><a ui-sref="correctionRequest">Correction Request</a></li>
+                                <li><a ui-sref="translationRequest">Translation Request</a></li>
                                 <li><a ui-sref="customer">Customer</a></li>
                                 <li><a ui-sref="language">Language</a></li>
                                 <li><a ui-sref="status">Status</a></li>
-                                <li><a ui-sref="translationRequest">Translation Request</a></li>
                                 <li><a ui-sref="translator">Translator</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
