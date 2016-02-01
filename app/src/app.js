@@ -23,42 +23,42 @@
 
     mod.config(['$stateProvider', '$urlRouterProvider', 'CrudTemplateURL', 'CrudCtrlAlias', function ($stateProvider, $urlRouterProvider, tplUrl, alias) {
             $stateProvider
-                .state('correctionRequest', {
-                    url: '/correctionRequest',
-                    templateUrl: tplUrl,
-                    controller: 'correctionRequestCtrl',
-                    controllerAs: alias
-                })
-                .state('customer', {
-                    url: '/customer',
-                    templateUrl: tplUrl,
-                    controller: 'customerCtrl',
-                    controllerAs: alias
-                })
-                .state('language', {
-                    url: '/language',
-                    templateUrl: tplUrl,
-                    controller: 'languageCtrl',
-                    controllerAs: alias
-                })
-                .state('status', {
-                    url: '/status',
-                    templateUrl: tplUrl,
-                    controller: 'statusCtrl',
-                    controllerAs: alias
-                })
-                .state('translationRequest', {
-                    url: '/translationRequest',
-                    templateUrl: tplUrl,
-                    controller: 'translationRequestCtrl',
-                    controllerAs: alias
-                })
-                .state('translator', {
-                    url: '/translator',
-                    templateUrl: tplUrl,
-                    controller: 'translatorCtrl',
-                    controllerAs: alias
-                });
+                    .state('correctionRequest', {
+                        url: '/correctionRequest',
+                        templateUrl: tplUrl,
+                        controller: 'correctionRequestCtrl',
+                        controllerAs: alias
+                    })
+                    .state('customer', {
+                        url: '/customer',
+                        templateUrl: tplUrl,
+                        controller: 'customerCtrl',
+                        controllerAs: alias
+                    })
+                    .state('language', {
+                        url: '/language',
+                        templateUrl: tplUrl,
+                        controller: 'languageCtrl',
+                        controllerAs: alias
+                    })
+                    .state('status', {
+                        url: '/status',
+                        templateUrl: tplUrl,
+                        controller: 'statusCtrl',
+                        controllerAs: alias
+                    })
+                    .state('translationRequest', {
+                        url: '/translationRequest',
+                        templateUrl: tplUrl,
+                        controller: 'translationRequestCtrl',
+                        controllerAs: alias
+                    })
+                    .state('translator', {
+                        url: '/translator',
+                        templateUrl: tplUrl,
+                        controller: 'translatorCtrl',
+                        controllerAs: alias
+                    });
             $urlRouterProvider.otherwise('/');
         }]);
 
@@ -67,5 +67,8 @@
                 apiUrl: 'http://localhost:8080/translation-service-api/api/users/',
                 successState: 'correctionRequest'
             });
+            auth.setRoles({
+                'customer': [{id: 'indexContractor', label: 'Contractor', icon: 'list-alt', state: 'contractor'}],
+                'translator': [{id: 'indexCustomer', label: 'Customer', icon: 'list-alt', state: 'customer'}]});
         }]);
 })(window.angular);
