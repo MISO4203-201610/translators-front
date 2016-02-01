@@ -9,6 +9,16 @@
                 displayName: 'Name',
                 type: 'String',
                 required: true
+            }, {
+                name: 'picture',
+                displayName: 'Picture',
+                type: 'String',
+                required: true
+            }, {
+                name: 'birthDate',
+                displayName: 'Birth Date',
+                type: 'Date',
+                required: true
             }],
         childs: [{
                 name: 'education',
