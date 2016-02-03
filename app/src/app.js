@@ -8,6 +8,7 @@
         'statusModule',
         'translationRequestModule',
         'translatorModule',
+        'catalogModule',
         'authModule',
         'ui.router',
         'ngCrud'
@@ -58,8 +59,14 @@
                         templateUrl: tplUrl,
                         controller: 'translatorCtrl',
                         controllerAs: alias
+                    })
+                    .state('catalog', {
+                        url: '/catalog',
+                        templateUrl: 'src/modules/catalog/catalog.tpl.html',
+                        controller: 'catalogCtrl',
+                        controllasAs: 'ctrl'
                     });
-            $urlRouterProvider.otherwise('/');
+            $urlRouterProvider.otherwise('/catalog');
         }]);
 
     mod.config(['authServiceProvider', function (auth) {

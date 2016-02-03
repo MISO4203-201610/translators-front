@@ -1,0 +1,16 @@
+<ul class="nav nav-tabs">
+    <li role="presentation"
+        ng-class="{active: ctrl.tab === 'translation'}">
+        <a href ng-click="ctrl.changeTab('translation')">Translation Requests</a>
+    </li>
+    <li role="presentation"
+        ng-class="{active: ctrl.tab === 'correction'}">
+        <a href ng-click="ctrl.changeTab('correction')">Correction Requests</a>
+    </li>
+</ul>
+<div ng-show="ctrl.tab === 'translation'">
+    <gallery fields="translationModel.fields" records="translationRecords"></gallery>
+</div>
+<div ng-show="ctrl.tab === 'correction'">
+    <gallery fields="correctionModel.fields" records="correctionRecords"></gallery>
+</div>

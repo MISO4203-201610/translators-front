@@ -20,13 +20,6 @@
                 type: 'Date',
                 required: true
             }, {
-                name: 'originalLanguage',
-                displayName: 'Original Language',
-                type: 'Reference',
-                url: 'languageContext',
-                options: [],
-                required: true
-            }, {
                 name: 'status',
                 displayName: 'Status',
                 type: 'Reference',
@@ -34,10 +27,10 @@
                 options: [],
                 required: true
             }, {
-                name: 'customer',
-                displayName: 'Customer',
+                name: 'originalLanguage',
+                displayName: 'Original Language',
                 type: 'Reference',
-                url: 'customerContext',
+                url: 'languageContext',
                 options: [],
                 required: true
             }, {

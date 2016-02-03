@@ -14,7 +14,8 @@
 
         <!-- build:css(<%= meta.src %>) styles/main.css -->
         <!-- include: "type": "css", "files": "<%= meta.includeCssFiles %>" -->
-        
+
+      
         <!-- /include -->
         <!-- endbuild -->
 
@@ -47,6 +48,7 @@
         <script src="src/modules/status/status.mod.js"></script>
         <script src="src/modules/translationRequest/translationRequest.mod.js"></script>
         <script src="src/modules/translator/translator.mod.js"></script>
+        <script src="src/modules/catalog/catalog.ctrl.js"></script>
         <script src="src/modules/correctionRequest/correctionRequest.ctrl.js"></script>
         <script src="src/modules/customer/customer.ctrl.js"></script>
         <script src="src/modules/language/language.ctrl.js"></script>
@@ -70,7 +72,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href>TranslationService</a>
+                            <a class="navbar-brand" ui-sref="catalog">TranslationService</a>
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->

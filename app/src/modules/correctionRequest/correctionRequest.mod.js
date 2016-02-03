@@ -33,12 +33,5 @@
                 url: 'languageContext',
                 options: [],
                 required: true
-            }, {
-                name: 'customer',
-                displayName: 'Customer',
-                type: 'Reference',
-                url: 'customerContext',
-                options: [],
-                required: true
             }]});
 })(window.angular);
