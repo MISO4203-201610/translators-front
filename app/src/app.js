@@ -64,7 +64,7 @@
                         url: '/catalog',
                         templateUrl: 'src/modules/catalog/catalog.tpl.html',
                         controller: 'catalogCtrl',
-                        controllasAs: 'ctrl'
+                        controllerAs: 'ctrl'
                     });
             $urlRouterProvider.otherwise('/catalog');
         }]);
@@ -75,7 +75,22 @@
                 successState: 'correctionRequest'
             });
             auth.setRoles({
-                'customer': [{id: 'indexContractor', label: 'Contractor', icon: 'list-alt', state: 'contractor'}],
-                'translator': [{id: 'indexCustomer', label: 'Customer', icon: 'list-alt', state: 'customer'}]});
+                'customer': [{
+                        id: 'correctionRequest',
+                        label: 'Corrections',
+                        icon: 'list-alt',
+                        state: 'correctionRequest'
+                    }, {
+                        id: 'translationRequest',
+                        label: 'Translations',
+                        icon: 'list-alt',
+                        state: 'translationRequest'
+                    }],
+                'translator': [{
+                        id: 'indexCustomer',
+                        label: 'Customer',
+                        icon: 'list-alt',
+                        state: 'customer'
+                    }]});
         }]);
 })(window.angular);
