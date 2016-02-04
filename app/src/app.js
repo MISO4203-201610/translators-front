@@ -9,6 +9,7 @@
         'translationRequestModule',
         'translatorModule',
         'catalogModule',
+        'profileModule',
         'authModule',
         'ui.router',
         'ngCrud'
@@ -65,8 +66,14 @@
                         templateUrl: 'src/modules/catalog/catalog.tpl.html',
                         controller: 'catalogCtrl',
                         controllerAs: 'ctrl'
+                    })
+                    .state('profile', {
+                        url: '/profile',
+                        templateUrl: 'src/modules/user/profile.tpl.html',
+                        controller: 'profileCtrl',
+                        controllerAs: 'ctrl'
                     });
-            $urlRouterProvider.otherwise('/catalog');
+            //            $urlRouterProvider.otherwise('/catalog');
         }]);
 
     mod.config(['authServiceProvider', function (auth) {
@@ -85,12 +92,17 @@
                         label: 'Translations',
                         icon: 'list-alt',
                         state: 'translationRequest'
+                    }, {
+                        id: 'profile',
+                        label: 'Profile',
+                        icon: 'list-alt',
+                        state: 'profile'
                     }],
                 'translator': [{
-                        id: 'indexCustomer',
-                        label: 'Customer',
+                        id: 'profile',
+                        label: 'Profile',
                         icon: 'list-alt',
-                        state: 'customer'
+                        state: 'profile'
                     }]});
         }]);
 })(window.angular);
