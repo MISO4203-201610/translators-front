@@ -67,7 +67,5 @@
                             }
                         }
                     };
-
-                    this.fetchRecords();
                 }]);
 })(window.angular);
