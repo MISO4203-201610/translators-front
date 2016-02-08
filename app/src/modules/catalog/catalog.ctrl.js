@@ -10,10 +10,10 @@
                     this.changeTab = function (tab) {
                         this.tab = tab;
                         if (tab === 'translation') {
-                            $scope.translationRecords = restangular.all(translationReqContext).getList().$object;
+                            $scope.translationRecords = restangular.all("catalog/translations").getList().$object;
                         }
                         if (tab === 'correction') {
-                            $scope.correctionRecords = restangular.all(correctionReqContext).getList().$object;
+                            $scope.correctionRecords = restangular.all("catalog/corrections").getList().$object;
                         }
                     };
                     this.changeTab('translations');
