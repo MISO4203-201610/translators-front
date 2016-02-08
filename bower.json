@@ -1,6 +1,7 @@
 {
     "name": "TranslationService",
     "dependencies": {
+        "angular": "1.4.9",
         "angular-ui-router": "~0.2.15",
         "ng-crud": "^0.2.0",
         "csw-ng-auth": "^0.1.0",
