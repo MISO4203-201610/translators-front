@@ -2,9 +2,7 @@
     ng.module('catalogModule', ['correctionRequestModule', 'translationRequestModule'])
             .controller('catalogCtrl', ['$scope', 'Restangular',
                 'translationRequestModel', 'correctionRequestModel',
-                'translationRequestContext', 'correctionRequestContext',
-                function ($scope, restangular, translationModel, correctionModel,
-                        translationReqContext, correctionReqContext) {
+                function ($scope, restangular, translationModel, correctionModel) {
                     $scope.translationModel = translationModel;
                     $scope.correctionModel = correctionModel;
                     this.changeTab = function (tab) {
