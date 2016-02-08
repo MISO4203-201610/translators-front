@@ -10,6 +10,7 @@
         'translatorModule',
         'catalogModule',
         'profileModule',
+        'skillsModule',
         'authModule',
         'ui.router',
         'ngCrud'
@@ -72,14 +73,19 @@
                         templateUrl: 'src/modules/user/profile.tpl.html',
                         controller: 'profileCtrl',
                         controllerAs: 'ctrl'
+                    })
+                    .state('skills', {
+                        url: '/skills',
+                        templateUrl: tplUrl,
+                        controller: 'skillsCtrl',
+                        controllerAs: 'ctrl'
                     });
-            //            $urlRouterProvider.otherwise('/catalog');
         }]);
 
     mod.config(['authServiceProvider', function (auth) {
             auth.setValues({
                 apiUrl: 'http://localhost:8080/translation-service-api/api/users/',
-                successState: 'correctionRequest'
+                successState: 'profile'
             });
             auth.setRoles({
                 'customer': [{
@@ -103,6 +109,11 @@
                         label: 'Profile',
                         icon: 'list-alt',
                         state: 'profile'
+                    }, {
+                        id: 'skills',
+                        label: 'Skills',
+                        icon: 'list-alt',
+                        state: 'skills'
                     }]});
         }]);
 })(window.angular);
