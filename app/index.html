@@ -50,6 +50,7 @@
         <script src="src/modules/status/status.mod.js"></script>
         <script src="src/modules/translationRequest/translationRequest.mod.js"></script>
         <script src="src/modules/translator/translator.mod.js"></script>
+        <script src="src/auth.js"></script>
         <script src="src/modules/catalog/catalog.ctrl.js"></script>
         <script src="src/modules/correctionRequest/correctionRequest.ctrl.js"></script>
         <script src="src/modules/customer/customer.ctrl.js"></script>
@@ -81,6 +82,14 @@
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="main-bar">
+                            <ul id="menu" ng-controller="roleCtrl" id="menu" class="nav navbar-nav">
+                                <li ng-if="correctionRequest"><a ui-sref="correctionRequest">Correction Request</a></li>
+                                <li ng-if="translationRequest"><a ui-sref="translationRequest">Translation Request</a></li>
+                                <li ng-if="profile"><a ui-sref="profile">Profile</a></li>
+                                <li ng-if="skills"><a ui-sref="skills">Skills</a></li>
+                                <li ng-if="language"><a ui-sref="language">Language</a></li>
+                                <li ng-if="status"><a ui-sref="status">Status</a></li>
+                            </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <login-button></login-button>
                             </ul>

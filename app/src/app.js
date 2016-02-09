@@ -13,7 +13,8 @@
         'skillsModule',
         'authModule',
         'ui.router',
-        'ngCrud'
+        'ngCrud',
+        'roleModule'
     ]);
 
     mod.config(['$logProvider', function ($logProvider) {
