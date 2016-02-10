@@ -83,6 +83,8 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="main-bar">
                             <ul id="menu" ng-controller="roleCtrl" id="menu" class="nav navbar-nav">
+                                <li ng-if="customer"><a ui-sref="customer">Customer</a></li>
+                                <li ng-if="translator"><a ui-sref="translator">Translator</a></li>
                                 <li ng-if="correctionRequest"><a ui-sref="correctionRequest">Correction Request</a></li>
                                 <li ng-if="translationRequest"><a ui-sref="translationRequest">Translation Request</a></li>
                                 <li ng-if="profile"><a ui-sref="profile">Profile</a></li>

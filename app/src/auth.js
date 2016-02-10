@@ -9,37 +9,42 @@
                     $rootScope.translationRequest = false;
                     $rootScope.profile = false;
                     $rootScope.skills = false;
+                    $rootScope.language = false;
+                    $rootScope.status = false;
+                    $rootScope.customer = false;
+                    $rootScope.translator = false;
                 }else {
                     var roles = $rootScope.roles = response.roles;
-                    if (roles.length===2){
+                    if (roles.indexOf("customer")!==-1){
+                        $rootScope.correctionRequest = true;
+                        $rootScope.translationRequest = true;
+                        $rootScope.profile = true;
+                        $rootScope.skills = false;
+                        $rootScope.language = false;
+                        $rootScope.status = false;
+                        $rootScope.customer = true;
+                        $rootScope.translator = false;   
+                    }                                
+                    if (roles.indexOf("translator")!==-1){
+                        $rootScope.profile = true;
+                        $rootScope.skills = true;
+                        $rootScope.correctionRequest = false;
+                        $rootScope.translationRequest = false;
+                        $rootScope.language = false;
+                        $rootScope.status = false;
+                        $rootScope.customer = false;
+                        $rootScope.translator = true;   
+                    }                                
+                    if (roles.indexOf("admin")!==-1){
                         $rootScope.correctionRequest = true;
                         $rootScope.translationRequest = true;
                         $rootScope.profile = true;
                         $rootScope.skills = true;
                         $rootScope.language = true;
                         $rootScope.status = true;
-                    }else{
-                       for (var i = 0; i < roles.length; i++) {
-                        switch (roles[i]) {
-                            case 'customer':
-                                $rootScope.correctionRequest = true;
-                                $rootScope.translationRequest = true;
-                                $rootScope.profile = true;
-                                $rootScope.skills = false;
-                                $rootScope.language = false;
-                                $rootScope.status = false;
-                                break;
-                            case 'translator':
-                                $rootScope.profile = true;
-                                $rootScope.skills = true;
-                                $rootScope.correctionRequest = false;
-                                $rootScope.translationRequest = false;
-                                $rootScope.language = false;
-                                $rootScope.status = false;
-                                break;
-                        }
-                    } 
-                    }                    
+                        $rootScope.customer = true;
+                        $rootScope.translator = true;
+                    }                   
                 }
 
 
