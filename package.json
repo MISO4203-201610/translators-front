@@ -1,6 +1,6 @@
 {
   "name": "translation-service",
-  "description": "TranslationService",
+  "description": "MPTranslationService-front",
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "^0.4.5",
