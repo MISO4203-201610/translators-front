@@ -45,4 +45,16 @@
                 model: model
             });
         }]);
+
+    mod.controller('TranslatorreviewsCtrl', ['CrudCreator', '$scope', 'reviewModel',
+        function (ngCrud, $scope, model) {
+            ngCrud.extendCompChildCtrl({
+                name: 'reviews',
+                displayName: 'Reviews',
+                parent: 'translator',
+                ctrl: this,
+                scope: $scope,
+                model: model
+            });
+        }]);
 })(window.angular);

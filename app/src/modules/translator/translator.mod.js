@@ -32,5 +32,10 @@
                 //template: '', //override generic template
                 ctrl: 'TranslatorlanguagesCtrl',
                 owned: false
+            }, {
+                name: 'reviews',
+                displayName: 'Reviews',
+                //template: '', //override generic template
+                ctrl: 'TranslatorreviewsCtrl'
             }]});
 })(window.angular);
