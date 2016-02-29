@@ -116,6 +116,38 @@
                         label: 'Skills',
                         icon: 'list-alt',
                         state: 'skills'
-                    }]});
+                    }],
+                'admin': [{
+                        id: 'profile',
+                        label: 'Profile',
+                        icon: 'list-alt',
+                        state: 'profile'
+                    }, {
+                        id: 'customer',
+                        label: 'Customers',
+                        icon: 'list-alt',
+                        state: 'customer'
+                    }, {
+                        id: 'translator',
+                        label: 'Translators',
+                        icon: 'list-alt',
+                        state: 'translator'
+                    }, {
+                        id: 'skills',
+                        label: 'Skills',
+                        icon: 'list-alt',
+                        state: 'skills'
+                    }, {
+                        id: 'language',
+                        label: 'Languages',
+                        icon: 'list-alt',
+                        state: 'language'
+                    }, {
+                        id: 'status',
+                        label: 'Status',
+                        icon: 'list-alt',
+                        state: 'status'
+                    }]
+            });
         }]);
 })(window.angular);
