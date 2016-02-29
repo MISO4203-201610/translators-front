@@ -40,5 +40,12 @@
                 url: 'languageContext',
                 options: [],
                 required: true
-            }]});
+            },{
+                name: 'description',
+                displayName: 'description',
+                type: 'String',
+                options: [],
+                required: false
+            }
+        ]});
 })(window.angular);

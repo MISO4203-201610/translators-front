@@ -15,7 +15,7 @@
                     $rootScope.translator = false;
                 }else {
                     var roles = $rootScope.roles = response.roles;
-                    if (roles.indexOf("customer")!==-1){
+                    if (roles.indexOf("customer") !== -1) {
                         $rootScope.correctionRequest = true;
                         $rootScope.translationRequest = true;
                         $rootScope.profile = true;
@@ -23,9 +23,9 @@
                         $rootScope.language = false;
                         $rootScope.status = false;
                         $rootScope.customer = true;
-                        $rootScope.translator = false;   
-                    }                                
-                    if (roles.indexOf("translator")!==-1){
+                        $rootScope.translator = false;
+                    }
+                    if (roles.indexOf("translator") !== -1) {
                         $rootScope.profile = true;
                         $rootScope.skills = true;
                         $rootScope.correctionRequest = false;
@@ -33,9 +33,9 @@
                         $rootScope.language = false;
                         $rootScope.status = false;
                         $rootScope.customer = false;
-                        $rootScope.translator = true;   
-                    }                                
-                    if (roles.indexOf("admin")!==-1){
+                        $rootScope.translator = true;
+                    }
+                    if (roles.indexOf("admin") !== -1) {
                         $rootScope.correctionRequest = true;
                         $rootScope.translationRequest = true;
                         $rootScope.profile = true;
@@ -44,7 +44,7 @@
                         $rootScope.status = true;
                         $rootScope.customer = true;
                         $rootScope.translator = true;
-                    }                   
+                    }
                 }
 
 
