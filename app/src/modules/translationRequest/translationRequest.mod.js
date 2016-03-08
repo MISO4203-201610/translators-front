@@ -42,7 +42,13 @@
                 required: true
             },{
                 name: 'description',
-                displayName: 'description',
+                displayName: 'Description',
+                type: 'String',
+                options: [],
+                required: false
+            },{
+                name: 'contexto',
+                displayName: 'Contexto',
                 type: 'String',
                 options: [],
                 required: false
