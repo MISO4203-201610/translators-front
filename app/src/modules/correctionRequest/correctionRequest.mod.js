@@ -33,5 +33,15 @@
                 url: 'languageContext',
                 options: [],
                 required: true
+            }, {
+                name: 'description',
+                displayName: 'Description',
+                type: 'String',
+                required: true
+            }, {
+                name: 'numberOfWords',
+                displayName: 'Number of Words',
+                type: 'Integer',
+                required: true
             }]});
 })(window.angular);

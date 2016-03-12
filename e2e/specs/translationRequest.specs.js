@@ -4,6 +4,8 @@ describe('TranslationRequest E2E Testing', function () {
 
 	var nameVarTest = 'Val' + Math.floor(Math.random() * 10000);
         var contextoVarTest = 'Val' + Math.floor(Math.random() * 10000);
+        var descriptionVarTest = 'Val' + Math.floor(Math.random() * 10000);
+        var numWordsVarTest = Math.floor(Math.random() * 10000);
 
     beforeEach(function () {
         browser.addMockModule('ngCrudMock', function () {
@@ -36,6 +38,8 @@ describe('TranslationRequest E2E Testing', function () {
         element(by.id('customer')).all(by.css('option')).last().click();
         element(by.id('targetLanguage')).all(by.css('option')).last().click();
         element(by.id('contexto')).sendKeys(contextoVarTest);
+        element(by.id('description')).sendKeys(descriptionVarTest);
+        element(by.id('numberOfWords')).sendKeys(numWordsVarTest);
         element(by.id('save-translationRequest')).click();
         expect(element.all(by.repeater('record in records')).count()).toEqual(1);
     });
@@ -50,6 +54,8 @@ describe('TranslationRequest E2E Testing', function () {
 
         element(by.id('name')).clear().sendKeys('New' + nameVarTest);
         element(by.id('contexto')).clear().sendKeys('New' + contextoVarTest);
+        element(by.id('description')).clear().sendKeys('New' + descriptionVarTest);
+        element(by.id('numberOfWords')).clear().sendKeys(numWordsVarTest + 5);
 
         element(by.id('save-translationRequest')).click();
 
@@ -62,5 +68,7 @@ describe('TranslationRequest E2E Testing', function () {
         expect(element.all(by.id('0-creationDate')).count()).toEqual(0);
         expect(element.all(by.id('0-dueDate')).count()).toEqual(0);
         expect(element.all(by.id('0-contexto')).count()).toEqual(0);
+        expect(element.all(by.id('0-description')).count()).toEqual(0);
+        expect(element.all(by.id('0-numberOfWords')).count()).toEqual(0);
     });
 });

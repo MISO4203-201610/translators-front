@@ -3,6 +3,8 @@ describe('CorrectionRequest E2E Testing', function () {
 	browser.driver.manage().window().maximize();
 
 	var nameVarTest = 'Val' + Math.floor(Math.random() * 10000);
+        var descriptionVarTest = 'Val' + Math.floor(Math.random() * 10000);
+        var numWordsVarTest = Math.floor(Math.random() * 10000);
 
     beforeEach(function () {
         browser.addMockModule('ngCrudMock', function () {
@@ -30,6 +32,8 @@ describe('CorrectionRequest E2E Testing', function () {
         element(by.id('status')).all(by.css('option')).last().click();
         element(by.id('language')).all(by.css('option')).last().click();
         element(by.id('customer')).all(by.css('option')).last().click();
+        element(by.id('description')).sendKeys(descriptionVarTest);
+        element(by.id('numberOfWords')).sendKeys(numWordsVarTest);
         element(by.id('save-correctionRequest')).click();
         expect(element.all(by.repeater('record in records')).count()).toEqual(1);
     });
@@ -42,6 +46,8 @@ describe('CorrectionRequest E2E Testing', function () {
         element(by.id('0-edit-btn')).click();
 
         element(by.id('name')).clear().sendKeys('New' + nameVarTest);
+        element(by.id('description')).clear().sendKeys('New' + descriptionVarTest);
+        element(by.id('numberOfWords')).clear().sendKeys(numWordsVarTest + 5);
 
         element(by.id('save-correctionRequest')).click();
 
@@ -53,5 +59,7 @@ describe('CorrectionRequest E2E Testing', function () {
         expect(element.all(by.id('0-name')).count()).toEqual(0);
         expect(element.all(by.id('0-creationDate')).count()).toEqual(0);
         expect(element.all(by.id('0-dueDate')).count()).toEqual(0);
+        expect(element.all(by.id('0-description')).count()).toEqual(0);
+        expect(element.all(by.id('0-numberOfWords')).count()).toEqual(0);
     });
 });
