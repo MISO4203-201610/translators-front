@@ -5,6 +5,7 @@
         'customerModule',
         'educationModule',
         'languageModule',
+        'knowledgeAreaModule',
         'statusModule',
         'translationRequestModule',
         'translatorModule',
@@ -12,6 +13,7 @@
         'profileModule',
         'reviewModule',
         'skillsModule',
+        'areasModule',
         'authModule',
         'ui.router',
         'ngCrud',
@@ -44,6 +46,12 @@
                         url: '/language',
                         templateUrl: tplUrl,
                         controller: 'languageCtrl',
+                        controllerAs: alias
+                    })
+                    .state('knowledgeArea', {
+                        url: '/knowledgeArea',
+                        templateUrl: tplUrl,
+                        controller: 'knowledgeAreaCtrl',
                         controllerAs: alias
                     })
                     .state('status', {
@@ -81,6 +89,12 @@
                         templateUrl: tplUrl,
                         controller: 'skillsCtrl',
                         controllerAs: 'ctrl'
+                    })
+                    .state('areas', {
+                        url: '/areas',
+                        templateUrl: tplUrl,
+                        controller: 'areasCtrl',
+                        controllerAs: 'ctrl'
                     });
         }]);
 
@@ -116,6 +130,11 @@
                         label: 'Skills',
                         icon: 'list-alt',
                         state: 'skills'
+                    }, {
+                        id: 'areas',
+                        label: 'Areas',
+                        icon: 'list-alt',
+                        state: 'areas'
                     }],
                 'admin': [{
                         id: 'profile',
@@ -133,15 +152,15 @@
                         icon: 'list-alt',
                         state: 'translator'
                     }, {
-                        id: 'skills',
-                        label: 'Skills',
-                        icon: 'list-alt',
-                        state: 'skills'
-                    }, {
                         id: 'language',
                         label: 'Languages',
                         icon: 'list-alt',
                         state: 'language'
+                    }, {
+                        id: 'knowledgeArea',
+                        label: 'Knowledge Areas',
+                        icon: 'list-alt',
+                        state: 'knowledgeArea'
                     }, {
                         id: 'status',
                         label: 'Status',

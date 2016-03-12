@@ -9,7 +9,9 @@
                     $rootScope.translationRequest = false;
                     $rootScope.profile = false;
                     $rootScope.skills = false;
+                    $rootScope.areas = false;
                     $rootScope.language = false;
+                    $rootScope.knowledgeArea = false;
                     $rootScope.status = false;
                     $rootScope.customer = false;
                     $rootScope.translator = false;
@@ -20,7 +22,9 @@
                         $rootScope.translationRequest = true;
                         $rootScope.profile = true;
                         $rootScope.skills = false;
+                        $rootScope.areas = false;
                         $rootScope.language = false;
+                        $rootScope.knowledgeArea = false;
                         $rootScope.status = false;
                         $rootScope.customer = true;
                         $rootScope.translator = false;
@@ -28,9 +32,11 @@
                     if (roles.indexOf("translator") !== -1) {
                         $rootScope.profile = true;
                         $rootScope.skills = true;
+                        $rootScope.areas = true;
                         $rootScope.correctionRequest = false;
                         $rootScope.translationRequest = false;
                         $rootScope.language = false;
+                        $rootScope.knowledgeArea = false;
                         $rootScope.status = false;
                         $rootScope.customer = false;
                         $rootScope.translator = true;
@@ -39,8 +45,10 @@
                         $rootScope.correctionRequest = true;
                         $rootScope.translationRequest = true;
                         $rootScope.profile = true;
-                        $rootScope.skills = true;
+                        $rootScope.skills = false;
+                        $rootScope.areas = false;
                         $rootScope.language = true;
+                        $rootScope.knowledgeArea = true;
                         $rootScope.status = true;
                         $rootScope.customer = true;
                         $rootScope.translator = true;
