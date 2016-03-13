@@ -25,7 +25,7 @@
         }]);
 
     mod.config(['RestangularProvider', function (rp) {
-            rp.setBaseUrl('http://localhost:51775/translation-service-api/api/');
+            rp.setBaseUrl('http://localhost:18699/translation-service-api/api/');
         }]);
 
     mod.config(['$stateProvider', '$urlRouterProvider', 'CrudTemplateURL', 'CrudCtrlAlias', function ($stateProvider, $urlRouterProvider, tplUrl, alias) {
@@ -100,7 +100,7 @@
 
     mod.config(['authServiceProvider', function (auth) {
             auth.setValues({
-                apiUrl: 'http://localhost:51775/translation-service-api/api/users/',
+                apiUrl: 'http://localhost:18699/translation-service-api/api/users/',
                 successState: 'profile'
             });
             auth.setRoles({
