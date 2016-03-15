@@ -8,6 +8,7 @@
         'knowledgeAreaModule',
         'statusModule',
         'translationRequestModule',
+        'translatorOfertModule',
         'translatorModule',
         'catalogModule',
         'profileModule',
@@ -25,7 +26,7 @@
         }]);
 
     mod.config(['RestangularProvider', function (rp) {
-            rp.setBaseUrl('http://localhost:18699/translation-service-api/api/');
+            rp.setBaseUrl('http://localhost:8080/translation-service-api/api/');
         }]);
 
     mod.config(['$stateProvider', '$urlRouterProvider', 'CrudTemplateURL', 'CrudCtrlAlias', function ($stateProvider, $urlRouterProvider, tplUrl, alias) {
@@ -66,6 +67,12 @@
                         controller: 'translationRequestCtrl',
                         controllerAs: alias
                     })
+                    .state('translatorOfert', {
+                        url: '/translatorOfert',
+                        templateUrl: tplUrl,
+                        controller: 'translatorOfertCtrl',
+                        controllerAs: alias
+                    })
                     .state('translator', {
                         url: '/translator',
                         templateUrl: tplUrl,
@@ -100,7 +107,7 @@
 
     mod.config(['authServiceProvider', function (auth) {
             auth.setValues({
-                apiUrl: 'http://localhost:18699/translation-service-api/api/users/',
+                apiUrl: 'http://localhost:8080/translation-service-api/api/users/',
                 successState: 'profile'
             });
             auth.setRoles({
@@ -131,6 +138,11 @@
                         icon: 'list-alt',
                         state: 'skills'
                     }, {
+                        id: 'translatorOfert',
+                        label: 'TranslatorOfert',
+                        icon: 'list-alt',
+                        state: 'translatorOfert'
+                    },{
                         id: 'areas',
                         label: 'Areas',
                         icon: 'list-alt',
