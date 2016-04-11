@@ -14,5 +14,16 @@
             });
             this.loadRefOptions();
             this.fetchRecords();
+
+            this.recordActions.invite = {
+                displayName: 'Invite',
+                icon: 'envelope',
+                fn: function (rc) {
+                    console.log(rc);
+                },
+                show: function () {
+                    return !this.readOnly;
+                }
+            };
         }]);
 })(window.angular);
