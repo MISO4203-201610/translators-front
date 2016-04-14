@@ -381,7 +381,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', [
         'jshint',
-        'jscs',
         'clean:server',
         'wiredep:test',
         'includeSource',

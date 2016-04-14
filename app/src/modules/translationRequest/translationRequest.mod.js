@@ -58,5 +58,12 @@
                 type: 'Integer',
                 required: true
             }
-        ]});
+        ],
+        childs: [{
+                name: 'knowledges',
+                displayName: 'Necesidades Especificas',
+                //template: '', //override generic template
+                ctrl: 'translationRequestKnowledgesCtrl',
+                owned: false
+            }]});
 })(window.angular);
