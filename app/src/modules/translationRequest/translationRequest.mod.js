@@ -64,6 +64,6 @@
                 displayName: 'Necesidades Especificas',
                 //template: '', //override generic template
                 ctrl: 'translationRequestKnowledgesCtrl',
-                owned: false
+                owned: true
             }]});
 })(window.angular);
