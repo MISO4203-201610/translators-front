@@ -43,13 +43,13 @@
                 displayName: 'Number of Words',
                 type: 'Integer',
                 required: true
-        }],
+            }],
         childs: [{
-                name: 'knowledges',
-                displayName: 'Necesidades Especificas',
-                //template: '', //override generic template
-                ctrl: 'correctionRequestKnowledgesCtrl',
-                owned: true
+            name: 'knowledges',
+            displayName: 'Necesidades Especificas',
+            //template: '', //override generic template
+            ctrl: 'correctionRequestKnowledgesCtrl',
+            owned: true
         }]
     });
 })(window.angular);

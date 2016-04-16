@@ -50,12 +50,8 @@
 
                         model.invitedUsers = accounts;
 
-                        console.log("Buscando cada uno... " + model.invitedUsers.length);
-
                         // Calculate reviews
                         for (var i = 0; i < model.invitedUsers.length; i++) {
-
-                            console.log('Name: ' + model.invitedUsers[i].name);
 
                             // Calculate reviews
                             model.invitedUsers[i].calculatedReviews = 0;
@@ -72,8 +68,6 @@
                                 model.invitedUsers[i].calculatedReviews = total / suma;
                             }
                         }
-
-                        console.log(model.invitedUsers);
                     });
                 },
                 show: function () {

@@ -62,7 +62,7 @@
                     })
                     .state('translationRequest', {
                         url: '/translationRequest',
-                        templateUrl: tplUrl,
+                        templateUrl: 'src/modules/translationRequest/translationRequest.tpl.html',
                         controller: 'translationRequestCtrl',
                         controllerAs: alias
                     })
