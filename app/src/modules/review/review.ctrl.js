@@ -9,17 +9,18 @@
 (function (ng) {
     var mod = ng.module('reviewModule');
 
-    mod.controller('reviewCtrl', ['CrudCreator', '$scope',
-        'languageContext', 'languageModel',
+    mod.controller('reviewsCtrl', ['CrudCreator', '$scope',
+        'reviewContext', 'reviewModel',
         function (ngCrud, $scope, url, model) {
             ngCrud.extendController({
-                name: 'language',
-                displayName: 'Language',
+                name: 'review',
+                displayName: 'Review',
                 ctrl: this,
                 scope: $scope,
                 model: model,
                 url: url
             });
             this.fetchRecords();
+            this.loadRefOptions();
         }]);
 })(window.angular);

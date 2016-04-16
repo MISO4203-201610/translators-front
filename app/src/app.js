@@ -14,7 +14,6 @@
         'profileModule',
         'reviewModule',
         'skillsModule',
-        'areasModule',
         'authModule',
         'ui.router',
         'ngCrud',
@@ -33,7 +32,7 @@
             $stateProvider
                     .state('correctionRequest', {
                         url: '/correctionRequest',
-                        templateUrl: tplUrl,
+                        templateUrl: 'src/modules/correctionRequest/correctionRequest.tpl.html',
                         controller: 'correctionRequestCtrl',
                         controllerAs: alias
                     })
@@ -97,10 +96,10 @@
                         controller: 'skillsCtrl',
                         controllerAs: 'ctrl'
                     })
-                    .state('areas', {
-                        url: '/areas',
+                    .state('reviews', {
+                        url: '/reviews',
                         templateUrl: tplUrl,
-                        controller: 'areasCtrl',
+                        controller: 'reviewsCtrl',
                         controllerAs: 'ctrl'
                     });
         }]);
@@ -142,11 +141,6 @@
                         label: 'TranslatorOfert',
                         icon: 'list-alt',
                         state: 'translatorOfert'
-                    },{
-                        id: 'areas',
-                        label: 'Areas',
-                        icon: 'list-alt',
-                        state: 'areas'
                     }],
                 'admin': [{
                         id: 'profile',

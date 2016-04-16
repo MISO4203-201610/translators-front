@@ -46,6 +46,20 @@
             });
         }]);
 
+    mod.controller('TranslatorknowledgeAreasCtrl', ['CrudCreator', '$scope',
+        'knowledgeAreaModel', 'knowledgeAreaContext', 'translatorContext',
+        function (ngCrud, $scope, model, url, parentUrl) {
+            ngCrud.extendAggChildCtrl({
+                name: 'knowledgeAreas',
+                displayName: 'Knowledge Areas',
+                parentUrl: parentUrl,
+                listUrl: url,
+                ctrl: this,
+                scope: $scope,
+                model: model
+            });
+        }]);
+
     mod.controller('TranslatorreviewsCtrl', ['CrudCreator', '$scope', 'reviewModel',
         function (ngCrud, $scope, model) {
             ngCrud.extendCompChildCtrl({

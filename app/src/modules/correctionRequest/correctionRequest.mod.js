@@ -43,5 +43,6 @@
                 displayName: 'Number of Words',
                 type: 'Integer',
                 required: true
-            }]});
+            }
+        ]});
 })(window.angular);

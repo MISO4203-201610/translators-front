@@ -39,9 +39,10 @@
                 ctrl: 'TranslatorlanguagesCtrl',
                 owned: false
             }, {
-                name: 'reviews',
-                displayName: 'Reviews',
+                name: 'knowledgeAreas',
+                displayName: 'Knowledge Areas',
                 //template: '', //override generic template
-                ctrl: 'TranslatorreviewsCtrl'
+                ctrl: 'TranslatorknowledgeAreasCtrl',
+                owned: false
             }]});
 })(window.angular);

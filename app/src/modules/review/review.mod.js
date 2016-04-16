@@ -19,5 +19,17 @@
                 displayName: 'Description',
                 type: 'String',
                 required: true
+            }, {
+                name: 'value',
+                displayName: 'Value',
+                type: 'Integer',
+                required: true
+            }, {
+                name: 'translator',
+                displayName: 'Translator',
+                type: 'Reference',
+                url: 'translatorContext',
+                options: [],
+                required: true
             }]});
 })(window.angular);
