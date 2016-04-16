@@ -87,4 +87,21 @@
             };
 
         }]);
+
+
+
+    mod.controller('correctionRequestKnowledgesCtrl', ['CrudCreator', '$scope',
+'knowledgeAreaModel', 'knowledgeAreaContext', 'correctionRequestContext',
+        function (ngCrud, $scope, model, url, parentUrl) {
+            ngCrud.extendAggChildCtrl({
+                name: 'knowledges',
+                displayName: 'Necesidades Especificas',
+                parentUrl: parentUrl,
+                listUrl: url,
+                ctrl: this,
+                scope: $scope,
+                model: model
+            });
+            this.loadRefOptions();
+        }]);
 })(window.angular);
