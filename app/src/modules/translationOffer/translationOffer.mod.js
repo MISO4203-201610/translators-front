@@ -1,9 +1,9 @@
 (function (ng) {
-    var mod = ng.module('translatorOfertModule', ['ngCrud']);
+    var mod = ng.module('translationOfferModule', ['ngCrud']);
 
-    mod.constant('translatorOfertContext', 'translatorOferts');
+    mod.constant('translationOfferContext', 'translationOffer');
 
-    mod.constant('translatorOfertModel', {
+    mod.constant('translationOfferModel', {
         fields: [{
                 name: 'price',
                 displayName: 'Price',
