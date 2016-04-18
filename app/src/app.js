@@ -8,7 +8,7 @@
         'knowledgeAreaModule',
         'statusModule',
         'translationRequestModule',
-        'translatorOfertModule',
+        'translationOfferModule',
         'translatorModule',
         'catalogModule',
         'profileModule',
@@ -66,10 +66,10 @@
                         controller: 'translationRequestCtrl',
                         controllerAs: alias
                     })
-                    .state('translatorOfert', {
-                        url: '/translatorOfert',
+                    .state('translationOffer', {
+                        url: '/translationOffers',
                         templateUrl: tplUrl,
-                        controller: 'translatorOfertCtrl',
+                        controller: 'translationOfferCtrl',
                         controllerAs: alias
                     })
                     .state('translator', {
@@ -137,10 +137,10 @@
                         icon: 'list-alt',
                         state: 'skills'
                     }, {
-                        id: 'translatorOfert',
-                        label: 'TranslatorOfert',
+                        id: 'translationOffer',
+                        label: 'TranslationOffer',
                         icon: 'list-alt',
-                        state: 'translatorOfert'
+                        state: 'translationOffer'
                     }],
                 'admin': [{
                         id: 'profile',

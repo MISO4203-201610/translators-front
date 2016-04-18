@@ -7,7 +7,7 @@
                 if (response == null) {
                     $rootScope.correctionRequest = false;
                     $rootScope.translationRequest = false;
-                    $rootScope.translatorOfert = false;
+                    $rootScope.translationOffer = false;
                     $rootScope.profile = false;
                     $rootScope.skills = false;
                     $rootScope.language = false;
@@ -21,7 +21,7 @@
                     if (roles.indexOf("customer") !== -1) {
                         $rootScope.correctionRequest = true;
                         $rootScope.translationRequest = true;
-                        $rootScope.translatorOfert = false;
+                        $rootScope.translationOffer = false;
                         $rootScope.profile = true;
                         $rootScope.skills = false;
                         $rootScope.language = false;
@@ -36,7 +36,7 @@
                         $rootScope.skills = true;
                         $rootScope.correctionRequest = false;
                         $rootScope.translationRequest = false;
-                        $rootScope.translatorOfert = true;
+                        $rootScope.translationOffer = true;
                         $rootScope.language = false;
                         $rootScope.knowledgeArea = false;
                         $rootScope.status = false;
@@ -47,7 +47,7 @@
                     if (roles.indexOf("admin") !== -1) {
                         $rootScope.correctionRequest = true;
                         $rootScope.translationRequest = true;
-                        $rootScope.translatorOfert = true;
+                        $rootScope.translationOffer = true;
                         $rootScope.profile = true;
                         $rootScope.skills = false;
                         $rootScope.language = true;
