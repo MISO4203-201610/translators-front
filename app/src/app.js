@@ -67,7 +67,7 @@
                         controllerAs: alias
                     })
                     .state('translationOffer', {
-                        url: '/translationOffers',
+                        url: '/translationOffer',
                         templateUrl: tplUrl,
                         controller: 'translationOfferCtrl',
                         controllerAs: alias
