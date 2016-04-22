@@ -106,7 +106,7 @@
 
             //Seleccionar oferta
             this.selectionOfert = function (id) {
-                Restangular.one('translationRequests/' + currentRequest + 'translatorOfert/' + id + '/selected').getList();
+                Restangular.one('translationRequests/' + currentRequest + '/translatorOfert/' + id + '/selected').getList();
             };
 
         }]);
