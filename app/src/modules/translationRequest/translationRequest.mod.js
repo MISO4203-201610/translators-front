@@ -57,6 +57,14 @@
                 displayName: 'Number of Words',
                 type: 'Integer',
                 required: true
+            }, {
+                name: 'translatorOfert',
+                displayName: 'Translator Oferts',
+                type: 'Reference',
+                options: [],
+                required: true,
+                url: 'translatorOfertContext',
+                ctrl: "translationRequestTranslatorOfertCtrl"
             }
         ],
         childs: [{

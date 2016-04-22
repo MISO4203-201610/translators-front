@@ -19,7 +19,16 @@
                 displayName: 'Translation Request',
                 type: 'Reference',
                 options: [],
-                required: true
+                required: true,
+                url: 'translationRequestContext',
+                ctrl: "translatorOfertTranslationRequestCtrl"
             }
-        ]});
+        ]/*,childs: [{
+                name: 'translationRequest',
+                displayName: 'Translation Request',
+                //template: '', //override generic template
+                ctrl: 'translatorOfertTranslationRequestCtrl',
+                owned: true
+            }]*/
+    });
 })(window.angular);
