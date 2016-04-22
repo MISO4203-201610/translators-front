@@ -1,0 +1,84 @@
+<div ui-view="" class="ng-scope">
+    <toolbar name="name" display-name="displayName" actions="ctrl.globalActions" class="ng-scope ng-isolate-scope">
+        <div id="invitation-header">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid"><div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#invitation-navbar">
+                            <span class="sr-only">Toggle navigation</span> 
+                            <span class="icon-bar"></span> 
+                            <span class="icon-bar"></span> 
+                            <span class="icon-bar"></span>
+                        </button> 
+                        <a class="navbar-brand ng-binding">Invitation</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="invitation-navbar">
+                        <!-- ngRepeat: (key, action) in actions -->
+                        <button ng-repeat="(key, action) in actions" id="create-invitation" class="btn btn-default navbar-btn ng-binding ng-scope ng-hide" ng-show="action.show()" ng-click="action.fn()">
+                            <span class="glyphicon glyphicon-plus"></span> Create
+                        </button><!-- end ngRepeat: (key, action) in actions -->
+                        <!--<button ng-repeat="(key, action) in actions" id="refresh-invitation" class="btn btn-default navbar-btn ng-binding ng-scope ng-hide" ng-show="action.show()" ng-click="action.fn()">
+                            <span class="glyphicon glyphicon-refresh"></span> Refresh
+                        </button>--><!-- end ngRepeat: (key, action) in actions -->
+                        <button ng-repeat="(key, action) in actions" id="save-invitation" class="btn btn-default navbar-btn ng-binding ng-scope" ng-show="action.show()" ng-click="action.fn()">
+                            <span class="glyphicon glyphicon-envelope"></span> Send
+                        </button><!-- end ngRepeat: (key, action) in actions -->
+                        <button ng-repeat="(key, action) in actions" id="cancel-invitation" class="btn btn-default navbar-btn ng-binding ng-scope" ng-show="action.show()" ng-click="action.fn()">
+                            <span class="glyphicon glyphicon-remove"></span> Reject
+                        </button><!-- end ngRepeat: (key, action) in actions -->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </toolbar><!-- ngRepeat: alert in alerts --><!-- ngIf: !ctrl.editMode --><!-- ngIf: ctrl.editMode -->
+    <div ng-if="ctrl.editMode" class="ng-scope">
+        <div class="well">
+            <div class="col-md-3"><h4>Congratulations, you have been invited for a Translation Request! Send your offer now!</h4></div>
+            <crud-form name="name" fields="model.fields" record="currentRecord" class="ng-isolate-scope">
+                <form novalidate="" name="form" id="invitation-form" role="form" class="ng-pristine ng-valid ng-valid-required">
+                    <fieldset>
+                        <input id="id" class="form-control ng-pristine ng-untouched ng-valid" type="hidden" ng-model="record.id">
+                        <!-- ngRepeat: column in fields -->
+                        <div class="form-group col-md-12 ng-scope" ng-repeat="column in fields" ng-switch="column.type" ng-class="{'has-success': form[column.name].$valid &amp;&amp; form[column.name].$dirty, 'has-error': form[column.name].$invalid &amp;&amp; form[column.name].$dirty}">
+                            <label for="accepted" class="col-md-2 control-label ng-binding">Accept</label>
+                            <div class="col-md-10"><!-- ngSwitchWhen: String --> <!-- ngSwitchWhen: Currency --> <!-- ngSwitchWhen: Integer --> <!-- ngSwitchWhen: Long --> <!-- ngSwitchWhen: Boolean -->
+                                <input ng-switch-when="Boolean" id="accepted" name="accepted" ng-checked="record[column.name]" type="checkbox" ng-model="record[column.name]" ng-required="column.required &amp;&amp; record[column.name].$isEmpty" class="ng-pristine ng-untouched ng-valid ng-scope ng-valid-required"><!-- end ngSwitchWhen: --> <!-- ngSwitchWhen: Computed --> <!-- ngSwitchWhen: Image --><!-- ngSwitchWhen: Reference --><!-- ngSwitchWhen: Date -->
+                            </div>
+                        </div><!-- end ngRepeat: column in fields -->
+                        <div class="form-group col-md-12 ng-scope" ng-repeat="column in fields" ng-switch="column.type" ng-class="{'has-success': form[column.name].$valid &amp;&amp; form[column.name].$dirty, 'has-error': form[column.name].$invalid &amp;&amp; form[column.name].$dirty}">
+                            <label for="price" class="col-md-2 control-label ng-binding">Price</label>
+                            <div class="col-md-10"><!-- ngSwitchWhen: String -->
+                                <input ng-switch-when="String" id="price" name="price" class="form-control ng-pristine ng-untouched ng-valid ng-scope ng-valid-required" type="text" ng-model="translationOffer.price" ng-required="column.required"><!-- end ngSwitchWhen: --> <!-- ngSwitchWhen: Currency --> <!-- ngSwitchWhen: Integer --> <!-- ngSwitchWhen: Long --> <!-- ngSwitchWhen: Boolean --> <!-- ngSwitchWhen: Computed --> <!-- ngSwitchWhen: Image --><!-- ngSwitchWhen: Reference --><!-- ngSwitchWhen: Date -->
+                            </div>
+                        </div><!-- end ngRepeat: column in fields -->
+                        <div class="form-group col-md-12 ng-scope" ng-repeat="column in fields" ng-switch="column.type" ng-class="{'has-success': form[column.name].$valid &amp;&amp; form[column.name].$dirty, 'has-error': form[column.name].$invalid &amp;&amp; form[column.name].$dirty}">
+                            <label for="time" class="col-md-2 control-label ng-binding">Time</label>
+                            <div class="col-md-10"><!-- ngSwitchWhen: String -->
+                                <input ng-switch-when="String" id="time" name="time" class="form-control ng-pristine ng-untouched ng-valid ng-scope ng-valid-required" type="text" ng-model="translationOffer.time" ng-required="column.required"><!-- end ngSwitchWhen: --> <!-- ngSwitchWhen: Currency --> <!-- ngSwitchWhen: Integer --> <!-- ngSwitchWhen: Long --> <!-- ngSwitchWhen: Boolean --> <!-- ngSwitchWhen: Computed --> <!-- ngSwitchWhen: Image --><!-- ngSwitchWhen: Reference --><!-- ngSwitchWhen: Date -->
+                            </div>
+                        </div><!-- end ngRepeat: column in fields -->
+                        <div class="form-group col-md-12 ng-scope" ng-repeat="column in fields" ng-switch="column.type" ng-class="{'has-success': form[column.name].$valid &amp;&amp; form[column.name].$dirty, 'has-error': form[column.name].$invalid &amp;&amp; form[column.name].$dirty}">
+                            <label for="comment" class="col-md-2 control-label ng-binding">Comment</label>
+                            <div class="col-md-10"><!-- ngSwitchWhen: String -->
+                                <input ng-switch-when="String" id="comment" name="comment" class="form-control ng-pristine ng-untouched ng-valid ng-scope ng-valid-required" type="text" ng-model="translationOffer.comment" ng-required="column.required"><!-- end ngSwitchWhen: --> <!-- ngSwitchWhen: Currency --> <!-- ngSwitchWhen: Integer --> <!-- ngSwitchWhen: Long --> <!-- ngSwitchWhen: Boolean --> <!-- ngSwitchWhen: Computed --> <!-- ngSwitchWhen: Image --><!-- ngSwitchWhen: Reference --><!-- ngSwitchWhen: Date -->
+                            </div>
+                        </div><!-- end ngRepeat: column in fields -->
+                        <div class="form-group col-md-12 ng-scope" ng-repeat="column in fields" ng-switch="column.type" ng-class="{'has-success': form[column.name].$valid &amp;&amp; form[column.name].$dirty, 'has-error': form[column.name].$invalid &amp;&amp; form[column.name].$dirty}">
+                            <label for="translationRequest" class="col-md-2 control-label ng-binding">Translation Request</label>
+                            <div class="col-md-10"><!-- ngSwitchWhen: String --> <!-- ngSwitchWhen: Currency --> <!-- ngSwitchWhen: Integer --> <!-- ngSwitchWhen: Long --> <!-- ngSwitchWhen: Boolean --> <!-- ngSwitchWhen: Computed --> <!-- ngSwitchWhen: Image --><!-- ngSwitchWhen: Reference -->
+                                <select ng-switch-when="Reference" id="translationRequest" name="translationRequest" class="form-control ng-pristine ng-untouched ng-valid ng-scope" ng-options="rc.name for rc in column.options track by rc.id" ng-model="translationOffer.translationRequest">
+                                    <option value="?" selected="selected"></option>
+                                </select><!-- end ngSwitchWhen: --><!-- ngSwitchWhen: Date -->
+                            </div>
+                        </div><!-- end ngRepeat: column in fields -->
+                    </fieldset>
+                    <button ng-repeat="(key, action) in actions" id="save-invitation" class="btn btn-default navbar-btn ng-binding ng-scope" ng-show="action.show()" ng-click="action.fn()">
+                        <span class="glyphicon glyphicon-envelope"></span> Send
+                    </button><!-- end ngRepeat: (key, action) in actions -->
+                    <button ng-repeat="(key, action) in actions" id="cancel-invitation" class="btn btn-default navbar-btn ng-binding ng-scope" ng-show="action.show()" ng-click="action.fn()">
+                        <span class="glyphicon glyphicon-remove"></span> Reject
+                    </button><!-- end ngRepeat: (key, action) in actions -->
+                </form>
+            </crud-form>
+        </div><!-- ngIf: model.childs -->
+    </div><!-- end ngIf: ctrl.editMode -->
+</div>

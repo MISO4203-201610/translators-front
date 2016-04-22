@@ -10,6 +10,7 @@
         'translationRequestModule',
         'translatorOfertModule',
         'translatorModule',
+        'invitationModule',
         'catalogModule',
         'profileModule',
         'reviewModule',
@@ -78,6 +79,13 @@
                         controller: 'translatorCtrl',
                         controllerAs: alias
                     })
+                    .state('invitation', {
+                        url: '/invitation',
+                        templateUrl: 'src/modules/invitation/invitation.tpl.html',
+                        //templateUrl: tplUrl,
+                        controller: 'invitationCtrl',
+                        controllerAs: alias
+                    })
                     .state('catalog', {
                         url: '/catalog',
                         templateUrl: 'src/modules/catalog/catalog.tpl.html',
@@ -141,6 +149,11 @@
                         label: 'TranslatorOfert',
                         icon: 'list-alt',
                         state: 'translatorOfert'
+                    }, {
+                        id: 'invitation',
+                        label: 'Invitation',
+                        icon: 'list-alt',
+                        state: 'invitation'
                     }],
                 'admin': [{
                         id: 'profile',
@@ -172,6 +185,11 @@
                         label: 'Status',
                         icon: 'list-alt',
                         state: 'status'
+                    }, {
+                        id: 'invitation',
+                        label: 'Invitation',
+                        icon: 'list-alt',
+                        state: 'invitation'
                     }]
             });
         }]);

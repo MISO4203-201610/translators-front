@@ -30,6 +30,7 @@
                         $rootScope.customer = true;
                         $rootScope.translator = false;
                         $rootScope.reviews = true;
+                        $rootScope.invitation = false;
                     }
                     if (roles.indexOf("translator") !== -1) {
                         $rootScope.profile = true;
@@ -43,6 +44,7 @@
                         $rootScope.customer = false;
                         $rootScope.translator = true;
                         $rootScope.reviews = false;
+                        $rootScope.invitation = true;
                     }
                     if (roles.indexOf("admin") !== -1) {
                         $rootScope.correctionRequest = true;
@@ -51,6 +53,7 @@
                         $rootScope.profile = true;
                         $rootScope.skills = false;
                         $rootScope.language = true;
+                        $rootScope.invitation = true;
                         $rootScope.knowledgeArea = true;
                         $rootScope.status = true;
                         $rootScope.customer = true;
