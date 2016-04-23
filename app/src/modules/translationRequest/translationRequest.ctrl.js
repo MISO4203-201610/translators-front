@@ -110,7 +110,6 @@
             };
 
         }]);
-
     mod.controller('translationRequestKnowledgesCtrl', ['CrudCreator', '$scope',
 'knowledgeAreaModel', 'knowledgeAreaContext', 'translationRequestContext',
         function (ngCrud, $scope, model, url, parentUrl) {
