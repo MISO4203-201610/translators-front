@@ -7,7 +7,7 @@
                 if (response == null) {
                     $rootScope.correctionRequest = false;
                     $rootScope.translationRequest = false;
-                    $rootScope.translationOffer = false;
+                    $rootScope.translatorOfert = false;
                     $rootScope.profile = false;
                     $rootScope.skills = false;
                     $rootScope.language = false;
@@ -21,7 +21,7 @@
                     if (roles.indexOf("customer") !== -1) {
                         $rootScope.correctionRequest = true;
                         $rootScope.translationRequest = true;
-                        $rootScope.translationOffer = false;
+                        $rootScope.translatorOfert = false;
                         $rootScope.profile = true;
                         $rootScope.skills = false;
                         $rootScope.language = false;
@@ -30,27 +30,30 @@
                         $rootScope.customer = true;
                         $rootScope.translator = false;
                         $rootScope.reviews = true;
+                        $rootScope.invitation = false;
                     }
                     if (roles.indexOf("translator") !== -1) {
                         $rootScope.profile = true;
                         $rootScope.skills = true;
                         $rootScope.correctionRequest = false;
                         $rootScope.translationRequest = false;
-                        $rootScope.translationOffer = true;
+                        $rootScope.translatorOfert = true;
                         $rootScope.language = false;
                         $rootScope.knowledgeArea = false;
                         $rootScope.status = false;
                         $rootScope.customer = false;
                         $rootScope.translator = true;
                         $rootScope.reviews = false;
+                        $rootScope.invitation = true;
                     }
                     if (roles.indexOf("admin") !== -1) {
                         $rootScope.correctionRequest = true;
                         $rootScope.translationRequest = true;
-                        $rootScope.translationOffer = true;
+                        $rootScope.translatorOfert = true;
                         $rootScope.profile = true;
                         $rootScope.skills = false;
                         $rootScope.language = true;
+                        $rootScope.invitation = true;
                         $rootScope.knowledgeArea = true;
                         $rootScope.status = true;
                         $rootScope.customer = true;

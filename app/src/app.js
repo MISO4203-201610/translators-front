@@ -8,8 +8,9 @@
         'knowledgeAreaModule',
         'statusModule',
         'translationRequestModule',
-        'translationOfferModule',
+        'translatorOfertModule',
         'translatorModule',
+        'invitationModule',
         'catalogModule',
         'profileModule',
         'reviewModule',
@@ -66,16 +67,23 @@
                         controller: 'translationRequestCtrl',
                         controllerAs: alias
                     })
-                    .state('translationOffer', {
-                        url: '/translationOffer',
+                    .state('translatorOfert', {
+                        url: '/translatorOfert',
                         templateUrl: tplUrl,
-                        controller: 'translationOfferCtrl',
+                        controller: 'translatorOfertCtrl',
                         controllerAs: alias
                     })
                     .state('translator', {
                         url: '/translator',
                         templateUrl: tplUrl,
                         controller: 'translatorCtrl',
+                        controllerAs: alias
+                    })
+                    .state('invitation', {
+                        url: '/invitation',
+                        templateUrl: 'src/modules/invitation/invitation.tpl.html',
+                        //templateUrl: tplUrl,
+                        controller: 'invitationCtrl',
                         controllerAs: alias
                     })
                     .state('catalog', {
@@ -137,10 +145,15 @@
                         icon: 'list-alt',
                         state: 'skills'
                     }, {
-                        id: 'translationOffer',
-                        label: 'TranslationOffer',
+                        id: 'translatorOfert',
+                        label: 'TranslatorOfert',
                         icon: 'list-alt',
-                        state: 'translationOffer'
+                        state: 'translatorOfert'
+                    }, {
+                        id: 'invitation',
+                        label: 'Invitation',
+                        icon: 'list-alt',
+                        state: 'invitation'
                     }],
                 'admin': [{
                         id: 'profile',
@@ -172,6 +185,11 @@
                         label: 'Status',
                         icon: 'list-alt',
                         state: 'status'
+                    }, {
+                        id: 'invitation',
+                        label: 'Invitation',
+                        icon: 'list-alt',
+                        state: 'invitation'
                     }]
             });
         }]);

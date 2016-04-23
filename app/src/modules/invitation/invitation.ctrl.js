@@ -1,12 +1,12 @@
 (function (ng) {
-    var mod = ng.module('translationOfferModule');
+    var mod = ng.module('invitationModule');
 
-    mod.controller('translationOfferCtrl', ['CrudCreator', '$scope',
-        'translationOfferContext', 'translationOfferModel',
+    mod.controller('invitationCtrl', ['CrudCreator', '$scope',
+        'invitationContext', 'invitationModel',
         function (ngCrud, $scope, url, model) {
             ngCrud.extendController({
-                name: 'translationOffer',
-                displayName: 'Translation Offer',
+                name: 'invitation',
+                displayName: 'Invitation',
                 ctrl: this,
                 scope: $scope,
                 model: model,

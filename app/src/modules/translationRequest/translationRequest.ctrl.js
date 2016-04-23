@@ -21,19 +21,20 @@
 
             // Ajustar el toolbar
             this.globalActions.create.show = function () {
-                return !self.readOnly && !self.editMode && !self.inviteMode;
+                return !self.readOnly && !self.editMode && !self.inviteMode && !self.selectOfertMode;
             };
 
             this.globalActions.refresh.show = function () {
-                return !self.readOnly && !self.editMode && !self.inviteMode;
+                return !self.readOnly && !self.editMode && !self.inviteMode && !self.selectOfertMode;
             };
 
             this.globalActions.cancel.show = function () {
-                return !self.readOnly && (self.editMode || self.inviteMode);
+                return !self.readOnly && (self.editMode || self.inviteMode || self.selectOfertMode);
             };
 
             this.globalActions.cancel.fn = function () {
                 self.inviteMode = false;
+                self.selectOfertMode = false;
                 self.fetchRecords();
             };
 
@@ -44,6 +45,7 @@
                 fn: function (rc) {
                     self.editMode = false;
                     self.inviteMode = true;
+                    self.selectOfertMode = false;
 
                     currentRequest = rc.id;
 
@@ -76,12 +78,38 @@
                 }
             };
 
-            // Enviar email
+            // Agregar la acción de seleccionar translatorOfert
+            this.recordActions.selectOfert = {
+                displayName: 'Select Offer',
+                icon: 'check',
+                fn: function (rc) {
+                    self.editMode = false;
+                    self.inviteMode = false;
+                    self.selectOfertMode = true;
+
+                    currentRequest = rc.id;
+
+                    Restangular.all('translationRequests/' + rc.id + '/translatorOfert').getList().then(function (translationOferts) {
+
+                        model.translationOferts = translationOferts;
+                    });
+                },
+                show: function () {
+                    return !this.readOnly;
+                }
+            };
+
+            // Enviar email de invitación a traductores
             this.sendMail = function (id) {
                 Restangular.one('translationRequests/recommendations/' + currentRequest + '/invite/' + id).getList();
             };
-        }]);
 
+            //Seleccionar oferta
+            this.selectionOfert = function (id) {
+                Restangular.one('translationRequests/' + currentRequest + '/translatorOfert/' + id + '/selected').getList();
+            };
+
+        }]);
     mod.controller('translationRequestKnowledgesCtrl', ['CrudCreator', '$scope',
 'knowledgeAreaModel', 'knowledgeAreaContext', 'translationRequestContext',
         function (ngCrud, $scope, model, url, parentUrl) {
@@ -96,4 +124,19 @@
             });
             this.loadRefOptions();
         }]);
+    /*mod.controller('translationRequestTranslatorOfertCtrl', ['CrudCreator', '$scope',
+'translatorOfertModel', 'translatorOfertContext', "translationRequestContext",
+        function (ngCrud, $scope, model, url, parentUrl) {
+            ngCrud.extendAggChildCtrl({
+                name: 'translatorOfert',
+                displayName: 'Translation Ofert',
+                parentUrl: parentUrl,
+                listUrl: url,
+                ctrl: this,
+                scope: $scope,
+                model: model
+            });
+            this.fetchRecords();
+            this.loadRefOptions();
+        }]);*/
 })(window.angular);

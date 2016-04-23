@@ -16,9 +16,7 @@
         <!-- build:css(<%= meta.src %>) styles/main.css -->
         <!-- include: "type": "css", "files": "<%= meta.includeCssFiles %>" -->
 
-
-    
- 
+       
         <!-- /include -->
         <!-- endbuild -->
 
@@ -47,25 +45,27 @@
         <script src="src/modules/correctionRequest/correctionRequest.mod.js"></script>
         <script src="src/modules/customer/customer.mod.js"></script>
         <script src="src/modules/education/education.mod.js"></script>
+        <script src="src/modules/invitation/invitation.mod.js"></script>
         <script src="src/modules/knowledgeArea/knowledgeArea.mod.js"></script>
         <script src="src/modules/language/language.mod.js"></script>
         <script src="src/modules/review/review.mod.js"></script>
         <script src="src/modules/status/status.mod.js"></script>
-        <script src="src/modules/translationOffer/translationOffer.mod.js"></script>
         <script src="src/modules/translationRequest/translationRequest.mod.js"></script>
         <script src="src/modules/translator/translator.mod.js"></script>
+        <script src="src/modules/translatorOfert/translatorOfert.mod.js"></script>
         <script src="src/auth.js"></script>
         <script src="src/modules/catalog/catalog.ctrl.js"></script>
         <script src="src/modules/correctionRequest/correctionRequest.ctrl.js"></script>
         <script src="src/modules/customer/customer.ctrl.js"></script>
+        <script src="src/modules/invitation/invitation.ctrl.js"></script>
         <script src="src/modules/knowledgeArea/knowledgeArea.ctrl.js"></script>
         <script src="src/modules/language/language.ctrl.js"></script>
         <script src="src/modules/review/review.ctrl.js"></script>
         <script src="src/modules/skills/skills.ctrl.js"></script>
         <script src="src/modules/status/status.ctrl.js"></script>
-        <script src="src/modules/translationOffer/translationOffer.ctrl.js"></script>
         <script src="src/modules/translationRequest/translationRequest.ctrl.js"></script>
         <script src="src/modules/translator/translator.ctrl.js"></script>
+        <script src="src/modules/translatorOfert/translatorOfert.ctrl.js"></script>
         <script src="src/modules/user/profile.ctrl.js"></script>
         <!-- /include -->
         <!-- endbuild -->
@@ -94,7 +94,7 @@
                                 <li ng-if="translator"><a ui-sref="translator">Translator</a></li>
                                 <li ng-if="correctionRequest"><a ui-sref="correctionRequest">C.Request</a></li>
                                 <li ng-if="translationRequest"><a ui-sref="translationRequest">T.Request</a></li>
-                                <li ng-if="translationOffer"><a ui-sref="translationOffer">T.Offer</a></li>
+                                <li ng-if="translatorOfert"><a ui-sref="translatorOfert">T.Ofert</a></li>
                                 <li ng-if="profile"><a ui-sref="profile">Profile</a></li>
                                 <li ng-if="skills"><a ui-sref="skills">Skills</a></li>
                                 <li ng-if="language"><a ui-sref="language">Language</a></li>
