@@ -2,7 +2,7 @@
     var mod = ng.module('translatorOfertModule', ['ngCrud']);
 
     mod.constant('translatorOfertContext', 'translatorOferts');
-
+    mod.constant('translatorOfertTranslationRequestContext', 'translatorOferts/translationRequests');
     mod.constant('translatorOfertModel', {
         fields: [{
                 name: 'price',
@@ -20,8 +20,7 @@
                 type: 'Reference',
                 options: [],
                 required: true,
-                url: 'translationRequestContext',
-                ctrl: "translatorOfertTranslationRequestCtrl"
+                url: 'translatorOfertTranslationRequestContext'
             }
         ]/*,childs: [{
                 name: 'translationRequest',
