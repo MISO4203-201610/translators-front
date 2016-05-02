@@ -23,18 +23,19 @@
 
         }]);
     mod.controller('translatorOfertTranslationRequestCtrl', ['CrudCreator', '$scope',
-'translationRequestModel', 'translationRequestContext', "translatorOfertContext",
-        function (ngCrud, $scope, model, url) {
-            ngCrud.extendAggChildCtrl({
-                name: 'translationRequest',
-                displayName: 'Translation Request',
-                parentUrl: "",
-                listUrl: url,
-                ctrl: this,
-                scope: $scope,
-                model: model
-            });
-            this.fetchRecords();
-            this.loadRefOptions();
-        }]);
+        'translationRequestModel', 'translationRequestContext', "translatorOfertContext",
+           function (ngCrud, $scope, model, url) {
+               ngCrud.extendAggChildCtrl({
+                   name: 'translationRequest',
+                   displayName: 'Translation Request',
+                   parentUrl: "",
+                   listUrl: url,
+                   ctrl: this,
+                   scope: $scope,
+                   model: model
+               });
+               this.fetchRecords();
+               this.loadRefOptions();
+           }]);
+
 })(window.angular);

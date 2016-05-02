@@ -16,7 +16,7 @@
         <!-- build:css(<%= meta.src %>) styles/main.css -->
         <!-- include: "type": "css", "files": "<%= meta.includeCssFiles %>" -->
 
-       
+      
         <!-- /include -->
         <!-- endbuild -->
 
@@ -48,6 +48,7 @@
         <script src="src/modules/invitation/invitation.mod.js"></script>
         <script src="src/modules/knowledgeArea/knowledgeArea.mod.js"></script>
         <script src="src/modules/language/language.mod.js"></script>
+        <script src="src/modules/resume/resume.mod.js"></script>
         <script src="src/modules/review/review.mod.js"></script>
         <script src="src/modules/status/status.mod.js"></script>
         <script src="src/modules/translationRequest/translationRequest.mod.js"></script>
@@ -60,6 +61,7 @@
         <script src="src/modules/invitation/invitation.ctrl.js"></script>
         <script src="src/modules/knowledgeArea/knowledgeArea.ctrl.js"></script>
         <script src="src/modules/language/language.ctrl.js"></script>
+        <script src="src/modules/resume/resume.ctrl.js"></script>
         <script src="src/modules/review/review.ctrl.js"></script>
         <script src="src/modules/skills/skills.ctrl.js"></script>
         <script src="src/modules/status/status.ctrl.js"></script>
@@ -101,6 +103,7 @@
                                 <li ng-if="knowledgeArea"><a ui-sref="knowledgeArea">Knowledge Area</a></li>
                                 <li ng-if="status"><a ui-sref="status">Status</a></li>
                                 <li ng-if="reviews"><a ui-sref="reviews">Reviews</a></li>
+                                <li ng-if="translator"><a ui-sref="translator">Jobs</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <login-button></login-button>

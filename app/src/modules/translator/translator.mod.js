@@ -44,5 +44,14 @@
                 //template: '', //override generic template
                 ctrl: 'TranslatorknowledgeAreasCtrl',
                 owned: false
-            }]});
+            },{
+                name: 'resume',
+                displayName: 'Resumé',
+                template: 'src/modules/resume/resume.tpl.html', //override generic template
+                ctrl: 'resumeCtrl',
+                owned: false
+            }
+
+
+        ]});
 })(window.angular);
