@@ -16,6 +16,7 @@
         'reviewModule',
         'skillsModule',
         'resumeModule',
+        'trajectoryModule',
         'authModule',
         'ui.router',
         'ngCrud',

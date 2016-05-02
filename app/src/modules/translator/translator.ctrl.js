@@ -31,6 +31,18 @@
                 model: model
             });
         }]);
+    mod.controller('TranslatorTrajectoryCtrl', ['CrudCreator', '$scope', 'trajectoryModel',
+        function (ngCrud, $scope, model) {
+            ngCrud.extendCompChildCtrl({
+                name: 'trajectories',
+                displayName: 'Professional Trajectory',
+                parentUrl: 'translator',
+                ctrl: this,
+                scope: $scope,
+                model: model
+            });
+        }]);
+
 
     mod.controller('TranslatorlanguagesCtrl', ['CrudCreator', '$scope',
         'languageModel', 'languageContext', 'translatorContext',
@@ -59,6 +71,8 @@
                 model: model
             });
         }]);
+
+
 
     mod.controller('TranslatorreviewsCtrl', ['CrudCreator', '$scope', 'reviewModel',
         function (ngCrud, $scope, model) {
