@@ -1,0 +1,61 @@
+<div id="resume-header">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#resume-navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">Resumé</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="resume-navbar">
+                <button  id="01-resume" class="btn btn-default navbar-btn" ng-show=true ng-click="editPage()"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                <button  id="01-resume" class="btn btn-default navbar-btn" ng-show=true ng-click="showPage()"><span class="glyphicon glyphicon-info-sign"></span> Show</button>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+<div ng-if="myVar === 2" >
+
+    <form >
+        <h3>Professional Profile </h3>   
+        <textarea rows="4" cols="50"ng-model="profile" ></textarea>
+        <h3>Achivements </h3>
+        <textarea rows="4" cols="50" ng-model="achivements" ></textarea>
+        <h3>Personal Information </h3>
+        <textarea rows="4" cols="50" ng-model="personals" ></textarea>
+        <div>
+            <button class="btn btn-default navbar-btn"  ng-click="saveTrans(profile, achivements, personals)" ><span class="glyphicon glyphicon-edit"></span>Save</button>
+        </div>
+    </form>
+</div>  
+
+<div ng-if="myVar === 1" >
+    <h3>Professional Profile </h3>     
+    {{profile}}
+    <h3>Achivements </h3>
+    <ul>
+        <div   ng-repeat="achi in achivement">
+            <li> {{ achi}} </li>
+        </div>
+    </ul>
+
+    <h3>Personal Information </h3>
+
+    <div  ng-repeat="per in personal">
+        {{ per}}
+
+    </div>
+</div>
+<h5 style="color:red;">{{mensaje}}</h5>
+
+
+
+

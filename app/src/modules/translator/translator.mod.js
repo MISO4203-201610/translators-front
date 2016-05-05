@@ -44,5 +44,21 @@
                 //template: '', //override generic template
                 ctrl: 'TranslatorknowledgeAreasCtrl',
                 owned: false
-            }]});
+            },{
+                name: 'resume',
+                displayName: 'Resumé',
+                template: 'src/modules/resume/resume.tpl.html', //override generic template
+                ctrl: 'resumeCtrl',
+                owned: false
+            },{
+                name: 'trajectories',
+                displayName: 'Professional Trajectory',
+                //template: 'src/modules/trajectory/trajectory.tpl.html', //override generic template
+                ctrl: 'TranslatorTrajectoryCtrl',
+                owned: false
+            }
+
+
+
+        ]});
 })(window.angular);
