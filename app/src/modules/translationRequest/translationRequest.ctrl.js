@@ -78,7 +78,7 @@
                 }
             };
 
-            // Agregar la acción de seleccionar translatorOfert
+            //Agregar la acción de seleccionar translatorOfert
             this.recordActions.selectOfert = {
                 displayName: 'Select Offer',
                 icon: 'check',
