@@ -57,6 +57,11 @@
                 displayName: 'Number of Words',
                 type: 'Integer',
                 required: true
+            }, {
+                name: 'urlFile',
+                displayName: 'URL of the document to translate',
+                type: 'String',
+                required: false
             }/*, {
                 name: 'translatorOfert',
                 displayName: 'Translator Oferts',
