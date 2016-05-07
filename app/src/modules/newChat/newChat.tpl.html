@@ -1,0 +1,44 @@
+
+
+
+
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<!-- view -->
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<div>
+    <div class="container"  ng-controller="newChatCtrl">
+        <div class="panel" >
+            <div class="panel-heading">
+                <h1>Create On Line Translation</h1>
+
+
+
+                <div class="well">
+                    <form >
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label for="fecha" >Fecha</label>
+                            </div>
+                            <div class="col-md-2">
+                                <date-picker value="fecha" model="fecha" id="fecha" ></date-picker>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label for="hora" >Hora</label>
+                            </div>
+                            <div class="col-md-1">
+                                <input  value="hora" ng-model="hora" id="hora" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" placeholder="HH:MM"></input>
+                            </div>
+                        </div>
+                        <div>
+                            <button ng-click="send2();" class="btn btn-default btn-sm ng-binding ng-scope">
+                                <span class="glyphicon glyphicon-globe  "></span> Create Room
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>

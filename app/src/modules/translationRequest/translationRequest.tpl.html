@@ -87,7 +87,7 @@
                     Offer Comments
                 </th>
                 <th>
-                    Selection
+                    Actions
                 </th>
             </tr>
         </thead>
@@ -103,6 +103,14 @@
                 <td>
                     <button ng-click="ctrl.selectionOfert(translatorOfert.id);" class="btn btn-default btn-sm ng-binding ng-scope">
                         <span class="glyphicon glyphicon-envelope"></span> Select
+                    </button>
+                
+                    <button ng-click="ctrl.createRoom(translatorOfert.translator.id, translatorOfert.translationRequest.id);" class="btn btn-default btn-sm ng-binding ng-scope">
+                        <span class="glyphicon glyphicon-saved"></span> Create Room
+                    </button>
+                    
+                    <button ng-click="ctrl.goRoom(translatorOfert.translator.id, translatorOfert.translationRequest.id);" class="btn btn-default btn-sm ng-binding ng-scope">
+                        <span class="glyphicon glyphicon-log-in"></span> Go Room
                     </button>
                 </td>
             </tr>

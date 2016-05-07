@@ -2,11 +2,12 @@
     var mod = ng.module('translationRequestModule');
 
     mod.controller('translationRequestCtrl', ['CrudCreator', 'Restangular', '$scope',
-        'translationRequestContext', 'translationRequestModel',
-        function (ngCrud, Restangular, $scope, url, model) {
+        'translationRequestContext', 'translationRequestModel', '$state',
+        function (ngCrud, Restangular, $scope, url, model,$state) {
 
             var self = this;
             var currentRequest = 0;
+            var currentCustomer = 0;
 
             ngCrud.extendController({
                 name: 'translationRequest',
@@ -49,6 +50,7 @@
 
                     currentRequest = rc.id;
 
+
                     Restangular.all('translationRequests/recommendations/' + rc.id).getList().then(function (accounts) {
 
                         model.invitedUsers = accounts;
@@ -88,6 +90,7 @@
                     self.selectOfertMode = true;
 
                     currentRequest = rc.id;
+                    currentCustomer = rc.customer.id;
 
                     Restangular.all('translationRequests/' + rc.id + '/translatorOfert').getList().then(function (translationOferts) {
 
@@ -109,9 +112,16 @@
                 Restangular.one('translationRequests/' + currentRequest + '/translatorOfert/' + id + '/selected').getList();
             };
 
+            this.createRoom = function (idTranslator, idRequest) {
+                $state.go('newchat', {customer: currentCustomer,contractor: idTranslator,service: idRequest });
+            };
+            this.goRoom = function (idTranslator, idRequest) {
+                $state.go('chat', {chatName: "CU" + currentCustomer + "TR" + idTranslator + "RQ" + idRequest });
+            };
+
         }]);
     mod.controller('translationRequestKnowledgesCtrl', ['CrudCreator', '$scope',
-'knowledgeAreaModel', 'knowledgeAreaContext', 'translationRequestContext',
+        'knowledgeAreaModel', 'knowledgeAreaContext', 'translationRequestContext',
         function (ngCrud, $scope, model, url, parentUrl) {
             ngCrud.extendAggChildCtrl({
                 name: 'knowledges',
@@ -125,18 +135,18 @@
             this.loadRefOptions();
         }]);
     /*mod.controller('translationRequestTranslatorOfertCtrl', ['CrudCreator', '$scope',
-'translatorOfertModel', 'translatorOfertContext', "translationRequestContext",
-        function (ngCrud, $scope, model, url, parentUrl) {
-            ngCrud.extendAggChildCtrl({
-                name: 'translatorOfert',
-                displayName: 'Translation Ofert',
-                parentUrl: parentUrl,
-                listUrl: url,
-                ctrl: this,
-                scope: $scope,
-                model: model
-            });
-            this.fetchRecords();
-            this.loadRefOptions();
-        }]);*/
+     'translatorOfertModel', 'translatorOfertContext', "translationRequestContext",
+     function (ngCrud, $scope, model, url, parentUrl) {
+     ngCrud.extendAggChildCtrl({
+     name: 'translatorOfert',
+     displayName: 'Translation Ofert',
+     parentUrl: parentUrl,
+     listUrl: url,
+     ctrl: this,
+     scope: $scope,
+     model: model
+     });
+     this.fetchRecords();
+     this.loadRefOptions();
+     }]);*/
 })(window.angular);

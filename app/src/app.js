@@ -17,6 +17,8 @@
         'skillsModule',
         'resumeModule',
         'trajectoryModule',
+        'newChatModule',
+        'chatModule',
         'authModule',
         'ui.router',
         'ngCrud',
@@ -104,6 +106,18 @@
                         url: '/skills',
                         templateUrl: tplUrl,
                         controller: 'skillsCtrl',
+                        controllerAs: 'ctrl'
+                    })
+                    .state('newchat', {
+                        url: '/newchat/:customer/:contractor/:service',
+                        templateUrl: 'src/modules/newChat/newChat.tpl.html',
+                        controller: 'newChatCtrl',
+                        controllerAs: 'ctrl'
+                    })
+                    .state('chat', {
+                        url: '/chat/:chatName',
+                        templateUrl: 'src/modules/chat/chat.tpl.html',
+                        controller: 'newChatCtrl',
                         controllerAs: 'ctrl'
                     })
                     .state('reviews', {

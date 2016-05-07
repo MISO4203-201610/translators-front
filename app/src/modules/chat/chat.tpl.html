@@ -1,0 +1,41 @@
+
+
+
+
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<!-- view -->
+<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<div ng-app="chatModule">
+    <div class="container"  ng-controller="chatCtrl">
+        <div class="panel" >
+            <div class="panel-heading">
+                <h1>Translation on Line: </h1>
+                <div class="well">
+
+                    <div class="masthead" ng-repeat="messag in chatM">
+                        {{ messag.userName}}:
+                        {{ messag.userMsg}}
+
+                    </div>
+                </div>
+                <div class="well">
+
+
+                    <form >
+                        <div style="padding: 10px 10px 10px 10px">
+                            <textarea rows=5 cols="100"ng-model="textbox" ></textarea>
+
+                        </div>
+                        <div>
+                            <button ng-click="send();" class="btn btn-default btn-sm ng-binding ng-scope">
+                                <span class="glyphicon glyphicon-share"></span> Send Message
+                            </button>
+                          
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
