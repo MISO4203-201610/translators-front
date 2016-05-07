@@ -3,11 +3,10 @@
 
     mod.controller('newChatCtrl', ['Restangular', '$scope', '$stateParams','$state',
         function (Restangular, $scope, $stateParams,$state) {
-            var chat = Restangular.all('translatoronline');
+            var chat = Restangular.all('chat');
             var customer = $stateParams.customer;
             var contractor = $stateParams.contractor;
             var request = $stateParams.service;
-
 
             // Send Messages
             $scope.send2 = function () {

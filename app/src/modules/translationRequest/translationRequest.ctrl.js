@@ -116,7 +116,7 @@
                 $state.go('newchat', {customer: currentCustomer,contractor: idTranslator,service: idRequest });
             };
             this.goRoom = function (idTranslator, idRequest) {
-                $state.go('chat', {chatName: "CU" + currentCustomer + "TR" + idTranslator + "RQ" + idRequest });
+                $state.go('chat', {chatName: "CU" + currentCustomer + "CO" + idTranslator + "TR" + idRequest });
             };
 
         }]);

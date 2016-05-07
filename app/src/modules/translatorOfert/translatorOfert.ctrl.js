@@ -20,6 +20,19 @@
             this.fetchRecords();
             this.loadRefOptions();
 
+            this.recordActions.details = {
+                displayName: 'Details',
+                icon: 'star',
+                fn: function (record) {
+                    //Acción a realizar
+                    var hola = record;
+                    hola = hola.count();
+                },
+                show: function () {
+                    return true;
+                }
+            };
+
 
         }]);
 })(window.angular);
