@@ -62,6 +62,11 @@
                 displayName: 'URL of the document to translate',
                 type: 'String',
                 required: false
+            }, {
+                name: 'enlaceArchivoResultado',
+                displayName: 'URL of the translation',
+                type: 'String',
+                required: false
             }/*, {
                 name: 'translatorOfert',
                 displayName: 'Translator Oferts',

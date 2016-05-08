@@ -87,7 +87,10 @@
                     Offer Comments
                 </th>
                 <th>
-                    Actions
+                    Status
+                </th>
+                <th>
+                    Selection
                 </th>
             </tr>
         </thead>
@@ -99,6 +102,9 @@
                 </td>
                 <td>
                     {{ translatorOfert.comment }}
+                </td>
+                <td>
+                    {{ translatorOfert.status }}
                 </td>
                 <td>
                     <button ng-click="ctrl.selectionOfert(translatorOfert.id);" class="btn btn-default btn-sm ng-binding ng-scope">

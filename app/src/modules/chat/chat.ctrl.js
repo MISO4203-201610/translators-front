@@ -29,7 +29,7 @@
             $scope.send = function () {
                 var newMessage = {
                     idChatName: $scope.chatId,
-                    userName:$scope.user.roles[0],
+                    userName: $scope.user.roles[0],
                     userMsg: $scope.textbox
                 };
                 chatMsg.post(newMessage).then(function () {

@@ -1,9 +1,9 @@
 (function (ng) {
-    var mod = ng.module('translatorOfertModule', ['ngCrud']);
+    var mod = ng.module('translatorJobModule', ['ngCrud']);
 
-    mod.constant('translatorOfertContext', 'translatorOferts');
+    mod.constant('translatorJobContext', 'translatorOferts/selected');
     mod.constant('translatorOfertTranslationRequestContext', 'translatorOferts/translationRequests');
-    mod.constant('translatorOfertModel', {
+    mod.constant('translatorJobModel', {
         fields: [{
                 name: 'price',
                 displayName: 'Price',
@@ -15,11 +15,6 @@
                 type: 'String',
                 required: true
             }, {
-                name: 'status',
-                displayName: 'Status',
-                type: 'String',
-                required: true
-            }, {
                 name: 'translationRequest',
                 displayName: 'Translation Request',
                 type: 'Reference',
@@ -27,7 +22,6 @@
                 required: true,
                 url: 'translatorOfertTranslationRequestContext'
             }
-
         ]
     });
 })(window.angular);

@@ -9,6 +9,7 @@
         'statusModule',
         'translationRequestModule',
         'translatorOfertModule',
+        'translatorJobModule',
         'translatorModule',
         'invitationModule',
         'catalogModule',
@@ -75,6 +76,12 @@
                         url: '/translatorOfert',
                         templateUrl: tplUrl,
                         controller: 'translatorOfertCtrl',
+                        controllerAs: alias
+                    })
+                    .state('translatorJob', {
+                        url: '/translatorJob',
+                        templateUrl: 'src/modules/translatorJob/translatorJob.tpl.html',
+                        controller: 'translatorJobCtrl',
                         controllerAs: alias
                     })
                     .state('translator', {

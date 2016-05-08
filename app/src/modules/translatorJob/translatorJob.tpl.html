@@ -1,0 +1,72 @@
+<toolbar name="name" display-name="displayName" actions="ctrl.globalActions"></toolbar>
+<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="ctrl.closeAlert($index)">{{alert.msg}}</alert>
+
+<div ng-if="ctrl.jobMode">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Translation Request
+                </th>
+                <th>
+                    Translation Description
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Offer Comments
+                </th>
+                <th>
+                    File URL to translate
+                </th>
+                <th>
+                    Translated File's URL 
+                </th>
+                <th>
+                    Change translated File's URL 
+                </th>
+                <th>
+                    Selection
+                </th>
+            </tr>
+        </thead>
+        <tbody id="translationOferts" ng-if="model.translationOferts">
+            <tr ng-repeat="translatorOfert in model.translationOferts">
+                <td>
+                    {{ translatorOfert.translationRequest.name }}
+                </td>
+                <td>
+                    {{ translatorOfert.translationRequest.description }}
+                </td>
+                <td>
+                    {{ translatorOfert.price }}
+                </td>
+                <td>
+                    {{ translatorOfert.comment }}
+                </td>
+                <td>
+                    {{ translatorOfert.translationRequest.urlFile }}
+                </td>
+                
+                <td>
+                    {{ translatorOfert.translationRequest.enlaceArchivoResultado }}
+                </td>
+                
+                <td>
+                    <p>{{ translatorOfert.translationRequest.enlaceArchivoResultado }}</p>
+                    <input id="translationURLFile" value="{{translatorOfert.translationRequest.enlaceArchivoResultado}}"/>
+                </td>
+                <td>
+                    <button ng-click="ctrl.submitTranslation(translatorOfert.id, translatorOfert.translationRequest.id);" class="btn btn-default btn-sm ng-binding ng-scope">
+                        <span class="glyphicon glyphicon-envelope"></span> Send Translation 
+                    </button>
+                    <!--Link de Traducción Online - Ludwing -->
+                    <button ng-click="ctrl.submitTranslation(translatorOfert.id, translatorOfert.translationRequest.id);" class="btn btn-default btn-sm ng-binding ng-scope">
+                        <span class="glyphicon glyphicon-comment"></span> Translation Online 
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
