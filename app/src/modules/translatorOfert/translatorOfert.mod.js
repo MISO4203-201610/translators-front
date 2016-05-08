@@ -15,6 +15,11 @@
                 type: 'String',
                 required: true
             }, {
+                name: 'status',
+                displayName: 'Status',
+                type: 'String',
+                required: true
+            }, {
                 name: 'translationRequest',
                 displayName: 'Translation Request',
                 type: 'Reference',
@@ -22,12 +27,6 @@
                 required: true,
                 url: 'translatorOfertTranslationRequestContext'
             }
-        ]/*,childs: [{
-                name: 'translationRequest',
-                displayName: 'Translation Request',
-                //template: '', //override generic template
-                ctrl: 'translatorOfertTranslationRequestCtrl',
-                owned: true
-            }]*/
+        ]
     });
 })(window.angular);

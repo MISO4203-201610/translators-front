@@ -78,7 +78,7 @@
                     })
                     .state('translatorJob', {
                         url: '/translatorJob',
-                        templateUrl: tplUrl,
+                        templateUrl: 'src/modules/translatorJob/translatorJob.tpl.html',
                         controller: 'translatorJobCtrl',
                         controllerAs: alias
                     })

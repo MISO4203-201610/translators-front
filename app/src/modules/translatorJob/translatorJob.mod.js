@@ -1,7 +1,7 @@
 (function (ng) {
     var mod = ng.module('translatorJobModule', ['ngCrud']);
 
-    mod.constant('translatorJobContext', 'translator/1/acceptedOferts');
+    mod.constant('translatorJobContext', 'translatorOferts/selected');
     mod.constant('translatorOfertTranslationRequestContext', 'translatorOferts/translationRequests');
     mod.constant('translatorJobModel', {
         fields: [{
