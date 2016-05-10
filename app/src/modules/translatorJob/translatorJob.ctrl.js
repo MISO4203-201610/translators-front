@@ -2,8 +2,8 @@
     var mod = ng.module('translatorJobModule');
 
     mod.controller('translatorJobCtrl', ['CrudCreator', 'Restangular', '$scope',
-        'translatorJobContext', 'translatorJobModel',
-        function (ngCrud, Restangular, $scope, url, model) {
+        'translatorJobContext', 'translatorJobModel','$state',
+        function (ngCrud, Restangular, $scope, url, model, $state) {
 
             var self = this;
             //var currentRequest = 0;
@@ -41,6 +41,11 @@
                 });
 
                 console.log("Hey2!");
+
+            };
+
+            this.goChat = function (id, idTranslationRequest, idCustomer) {
+                $state.go('chat', {chatName: "CU" + idCustomer + "CO" + id + "TR" + idTranslationRequest});
 
             };
             this.fetchRecords();
